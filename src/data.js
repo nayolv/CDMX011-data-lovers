@@ -1,9 +1,9 @@
-// estas funciones son de ejemplo
+const datos = {
 
-export const example = () => {
-  return 'example';
-};
+function(){
+  let saludar = "hola";
+ return saludar;
+}
 
-export const anotherExample = () => {
-  return 'OMG';
 };
+export default datos;
