@@ -35,22 +35,3 @@ header{
     font-size: 30px;
     border-radius: 10px;
 }
-
-
-.tarjetasElemento{
-    margin-top: -500px;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
- 
-}
-.tarjetasElemento div{
-    background-color: gray;
-    text-align: center;
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-    line-height: 105px;
-    border-radius: 10px;
-}
