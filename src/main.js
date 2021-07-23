@@ -9,26 +9,27 @@ import info from './data/pokemon/pokemon.js';
 const botonBuscar = document.getElementById("btnSearch");
 
 botonBuscar.addEventListener("click", function () {
-
-  info.pokemon.forEach(poke => {
-
-    const filtradoPorNombre = poke.name;
-    const tarjetaInfo = document.getElementById("buscador").value.toLowerCase();
-    let tipoDiv =document.querySelector("#tipo")
+    
+  const tarjetaInfo = document.getElementById("buscador").value.toLowerCase();
+    let tipoDiv = document.querySelector("#tipo")
     let resistenciaDiv = document.querySelector("#resistencia");
     let debilidadesDiv = document.querySelector("#debilidades");
 
+  info.pokemon.forEach(poke => {
+
+    
+    const filtradoPorNombre = poke.name;
     const imgSelec = poke.img;
-    const busquedaTipo = "TIPO: " + poke.type; 
+    const busquedaTipo = "TIPO: " + poke.type;
     const buesquedaResistencia = " RESISTENCIA: " + poke.resistant;
     const busqueaDebilidades = "DEBILIDAD: " + poke.weaknesses;
+
     if (filtradoPorNombre === tarjetaInfo) {
-    
 
       tipoDiv.textContent = busquedaTipo.replaceAll(",", "\n");
       resistenciaDiv.textContent = buesquedaResistencia.replaceAll(",", "\n");
-      debilidadesDiv.textContent = busqueaDebilidades.replaceAll(",", "     ")
-     document.getElementById("imagen").src = imgSelec;
+      debilidadesDiv.textContent = busqueaDebilidades.replaceAll(",", " ")
+      document.getElementById("imagen").src = imgSelec;
 
     }
 
