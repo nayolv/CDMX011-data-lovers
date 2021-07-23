@@ -6,25 +6,26 @@ import info from './data/pokemon/pokemon.js';
 
 //console.log(data);
 
-
 const boton = document.getElementById("btn");
-boton.addEventListener("click", function(){
-   info.pokemon.forEach(poke => 
-    
-  {  let prueba = poke.name;
-    const caja = document.getElementById("entrada").value;
+boton.addEventListener("click", function () {
+  info.pokemon.forEach(poke => {
+    let prueba = poke.name;
+    const caja = document.getElementById("entrada").value.toLowerCase();
+    let res =document.querySelector("#element");
+    let  resist = poke.resistant + poke.about;
+
     if (prueba === caja) {
-        alert(poke.about)
-        
+
+     res.textContent = resist;
+console.log(res.textContent)
     }
-    
+
   }
-   ) 
+  )
 })
-        
 
 
-    
+
 
 
 //document.querySelector('#prueba').innerHTML = info.pokemon[0]["about"];
@@ -42,7 +43,7 @@ cambio.style.visibility = 'hidden';
 document.querySelector("#element").addEventListener("click", function () {
  const ocultarTarj = document.getElementById('element');
  ocultarTarj.style.visibility = 'hidden';
- 
+
 let tipos = document.getElementById('types');
 
 tipos.style.visibility = 'visible';
