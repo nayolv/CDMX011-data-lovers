@@ -6,18 +6,30 @@ import info from './data/pokemon/pokemon.js';
 
 //console.log(data);
 
-const boton = document.getElementById("btn");
-boton.addEventListener("click", function () {
+const botonBuscar = document.getElementById("btnSearch");
+
+botonBuscar.addEventListener("click", function () {
+
   info.pokemon.forEach(poke => {
-    let prueba = poke.name;
-    const caja = document.getElementById("entrada").value.toLowerCase();
-    let res =document.querySelector("#element");
-    let  resist = poke.resistant + poke.about;
 
-    if (prueba === caja) {
+    const filtradoPorNombre = poke.name;
+    const tarjetaInfo = document.getElementById("buscador").value.toLowerCase();
+    let tipoDiv =document.querySelector("#tipo")
+    let resistenciaDiv = document.querySelector("#resistencia");
+    let debilidadesDiv = document.querySelector("#debilidades");
 
-     res.textContent = resist;
-console.log(res.textContent)
+    const imgSelec = poke.img;
+    const busquedaTipo = "TIPO: " + poke.type; 
+    const buesquedaResistencia = " RESISTENCIA: " + poke.resistant;
+    const busqueaDebilidades = "DEBILIDAD: " + poke.weaknesses;
+    if (filtradoPorNombre === tarjetaInfo) {
+    
+
+      tipoDiv.textContent = busquedaTipo.replaceAll(",", "\n");
+      resistenciaDiv.textContent = buesquedaResistencia.replaceAll(",", "\n");
+      debilidadesDiv.textContent = busqueaDebilidades.replaceAll(",", "     ")
+     document.getElementById("imagen").src = imgSelec;
+
     }
 
   }
