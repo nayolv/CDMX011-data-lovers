@@ -21,6 +21,8 @@ const manipulacionData ={
 export const anotherExample = () => {
   return 'OMG';
 };*/
+
+
 }
 
 export default manipulacionData;

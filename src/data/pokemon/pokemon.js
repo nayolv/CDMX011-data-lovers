@@ -1,4 +1,4 @@
-const datos = {
+const info = {
   "pokemon": [{
     "num": "001",
     "name": "bulbasaur",
@@ -23951,4 +23951,4 @@ const datos = {
     }
   }]
 };
-export default datos;
+export default info;
