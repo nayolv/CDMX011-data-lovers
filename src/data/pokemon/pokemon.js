@@ -1,5 +1,7 @@
-const info ={
-  "pokemon": [{
+
+export default 
+{
+    "pokemon": [{
     "num": "001",
     "name": "bulbasaur",
     "generation": {
@@ -949,12 +951,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "2 km",
     "buddy-distance-km": "1",
     "evolution": {
@@ -1028,12 +1030,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "1",
     "evolution": {
@@ -1216,12 +1218,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "2 km",
     "buddy-distance-km": "1",
     "evolution": {
@@ -1299,12 +1301,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "1",
     "evolution": {
@@ -12674,20 +12676,20 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "splash",
-      "type": "water",
-      "base-damage": "0",
-      "energy": "0",
-      "move-duration-seg": "1.73"
-    }],
+        "name": "splash",
+        "type": "water",
+        "base-damage": "0",
+        "energy": "0",
+        "move-duration-seg": "1.73"
+      }],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "2 km",
     "buddy-distance-km": "1",
     "evolution": {
@@ -12947,20 +12949,20 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "pound",
-      "type": "normal",
-      "base-damage": "7",
-      "energy": "6",
-      "move-duration-seg": "0.6"
-    }],
+        "name": "pound",
+        "type": "normal",
+        "base-damage": "7",
+        "energy": "6",
+        "move-duration-seg": "0.6"
+      }],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
@@ -13125,12 +13127,12 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "water gun",
-      "type": "water",
-      "base-damage": "5",
-      "energy": "5",
-      "move-duration-seg": "0.5"
-    }],
+        "name": "water gun",
+        "type": "water",
+        "base-damage": "5",
+        "energy": "5",
+        "move-duration-seg": "0.5"
+      }],
     "special-attack": [
       {
         "name": "water pulse",
@@ -14121,12 +14123,12 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "frost breath",
-      "type": "ice",
-      "base-damage": "10",
-      "energy": "8",
-      "move-duration-seg": "0.9"
-    }],
+        "name": "frost breath",
+        "type": "ice",
+        "base-damage": "10",
+        "energy": "8",
+        "move-duration-seg": "0.9"
+      }],
     "special-attack": [
       {
         "name": "ice beam",
@@ -14286,12 +14288,12 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "fire spin",
-      "type": "fire",
-      "base-damage": "14",
-      "energy": "10",
-      "move-duration-seg": "1.1"
-    }],
+        "name": "fire spin",
+        "type": "fire",
+        "base-damage": "14",
+        "energy": "10",
+        "move-duration-seg": "1.1"
+      }],
     "special-attack": [
       {
         "name": "fire blast",
@@ -14760,12 +14762,12 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "pound",
-      "type": "normal",
-      "base-damage": "7",
-      "energy": "6",
-      "move-duration-seg": "0.6"
-    }],
+        "name": "pound",
+        "type": "normal",
+        "base-damage": "7",
+        "energy": "6",
+        "move-duration-seg": "0.6"
+      }],
     "special-attack": [
       {
         "name": "blizzard",
@@ -15917,12 +15919,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "blizzard",
-      "type": "ice",
-      "base-damage": "130",
-      "energy": "-100",
-      "move-duration-seg": "3.1"
-    }],
+        "name": "blizzard",
+        "type": "ice",
+        "base-damage": "130",
+        "energy": "-100",
+        "move-duration-seg": "3.1"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "1",
     "evolution": {
@@ -19450,20 +19452,20 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "hidden power",
-      "type": "normal",
-      "base-damage": "15",
-      "energy": "15",
-      "move-duration-seg": "1.5"
-    }],
+        "name": "hidden power",
+        "type": "normal",
+        "base-damage": "15",
+        "energy": "15",
+        "move-duration-seg": "1.5"
+      }],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "5",
     "evolution": {
@@ -19526,12 +19528,12 @@ const info ={
     ],
     "special-attack": [
       {
-      "name": "mirror coat",
-      "type": "psychic",
-      "base-damage": "60",
-      "energy": "-50",
-      "move-duration-seg": "2.6"
-    }],
+        "name": "mirror coat",
+        "type": "psychic",
+        "base-damage": "60",
+        "energy": "-50",
+        "move-duration-seg": "2.6"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
@@ -22442,20 +22444,20 @@ const info ={
     ],
     "quick-move": [
       {
-      "name": "tackle",
-      "type": "normal",
-      "base-damage": "5",
-      "energy": "5",
-      "move-duration-seg": "0.5"
-    }],
+        "name": "tackle",
+        "type": "normal",
+        "base-damage": "5",
+        "energy": "5",
+        "move-duration-seg": "0.5"
+      }],
     "special-attack": [
       {
-      "name": "struggle",
-      "type": "normal",
-      "base-damage": "35",
-      "energy": "-33",
-      "move-duration-seg": "2.2"
-    }],
+        "name": "struggle",
+        "type": "normal",
+        "base-damage": "35",
+        "energy": "-33",
+        "move-duration-seg": "2.2"
+      }],
     "egg": "not in eggs",
     "buddy-distance-km": "3",
     "evolution": {
@@ -23952,4 +23954,3 @@ const info ={
   }]
 };
 
-export default info;

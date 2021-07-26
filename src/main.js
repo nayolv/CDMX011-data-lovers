@@ -1,21 +1,20 @@
 import datos from './data.js';
-import info from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js';
 //import data from './data/pokemon/pokemon.js';
 
+const dataImportada = data.pokemon;
 
-
-//console.log(data);
 
 const botonBuscar = document.getElementById("btnSearch");
 
 botonBuscar.addEventListener("click", function () {
     
   const tarjetaInfo = document.getElementById("buscador").value.toLowerCase();
-    let tipoDiv = document.querySelector("#tipo")
+    let tipoDiv = document.querySelector("#tipo");
     let resistenciaDiv = document.querySelector("#resistencia");
     let debilidadesDiv = document.querySelector("#debilidades");
 
-  info.pokemon.forEach(poke => {
+  dataImportada.forEach(poke => {
 
     
     const filtradoPorNombre = poke.name;
@@ -28,23 +27,38 @@ botonBuscar.addEventListener("click", function () {
 
       tipoDiv.textContent = busquedaTipo.replaceAll(",", "\n");
       resistenciaDiv.textContent = buesquedaResistencia.replaceAll(",", "\n");
-      debilidadesDiv.textContent = busqueaDebilidades.replaceAll(",", " ")
+      debilidadesDiv.textContent = busqueaDebilidades.replaceAll(",", " ");
       document.getElementById("imagen").src = imgSelec;
 
     }
 
   }
-  )
-})
+  );
+});
+
+ 
+document.getElementById("tiposPokemon").addEventListener("change",function(){
+  recuperarSeleccionado();  
+   });
+   
+ function recuperarSeleccionado(){
+  const elementoSeleccionado= document.getElementById("tiposPokemon").value;
+  const listaPokeTipo = dataImportada.filter(poke =>elementoSeleccionado==poke.type);
+  let tipoDiv = document.querySelector("#tipo");
+  const names = listaPokeTipo.map(nombres => nombres.name);
+  const imgSelec = listaPokeTipo.map(imagenes => imagenes.img) 
+
+tipoDiv.innerHTML = names;
 
 
+  console.log(imgSelec)
+}
 
+  
 
+//---------------------------pruebas-----------------------------------------------------------
 
 //document.querySelector('#prueba').innerHTML = info.pokemon[0]["about"];
-
-
-
 
 /*
 console.log(datos);
@@ -63,4 +77,25 @@ tipos.style.visibility = 'visible';
 
 
 
-})*/
+*/
+/*;
+
+
+document.getElementById("tiposPokemon").addEventListener("change",function(){
+  
+ let valorSelect = elementoSeleccionado.value;*/
+
+ 
+ //info.pokemon.forEach(poke=>{})
+
+
+//let prueba = dataImportada.map(tipos => tipos.type);
+
+
+
+/*const filtradoElectrico = dataImportada.filter(tipos => tipos.type == 'fire')
+ 
+
+console.log(filtradoElectrico)*/
+  
+
