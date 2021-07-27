@@ -1,7 +1,56 @@
-#pokedex{
-    background-color: red;
+body{
+    background-color: #DBFDB9;
 }
 
-#nombrePokemon{
-   background-color:A9C77A; 
+header{
+    background-color: #3A4AD8;
+    display: flex;
+    margin-top: 0px;    
+    width: cover;
+    height: 120px;
+}
+
+
+#logo{
+    position: relative;
+    width: 170px;
+    height: 100px;
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;    
+    width: 1300px;
+    margin-top: 5%;
+    
+}
+#buscador{
+display: flex;
+background-color: rgb(247, 247, 247);
+width: 200px;
+height: 30px;
+outline: none;
+border-color: transparent;
+border-radius: 20px 0px 0px 20px;
+
+}
+#btnSearch{
+    background-color: rgb(247, 247, 247);
+    height: 38px;
+    border-right: white;    
+    border-radius: 0px 15px 15px 0px;
+  
+}
+
+
+#info{
+display: flex;
+text-align: justify;
+background-color: rgb(189, 85, 85);
+width: 200px;
+height: 300px;
+margin-right: 50%;
+margin-left: 50%;
+flex-wrap: wrap;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
