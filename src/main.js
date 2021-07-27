@@ -4,36 +4,77 @@ import data from './data/pokemon/pokemon.js';
 
 const dataImportada = data.pokemon;
 
+
 document.getElementById("btnSearch").addEventListener("click", function () {
 
-  const tarjetaInfo = document.getElementById("buscador").value.toLowerCase();
-  let tipoP = document.querySelector("#tipo");
-  let resistenciaP = document.querySelector("#resistencia");
-  let debilidadesP = document.querySelector("#debilidades");
+  const searchUser = document.getElementById("buscador").value.toLowerCase();
+  const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
 
-  datos.searching(dataImportada, tarjetaInfo, tipoP, resistenciaP, debilidadesP);//Mandando parametros a otro archivo js
+ 
+  buscadorFuncional.forEach(item =>{
+
+  const imgSelec = item.img;
+  document.getElementById("imagen").src = imgSelec;
+
+
+  const listaTipo = document.getElementById("typePokemon");
+  const liTipo = document.createElement("li");
+  
+  const tipos = item.type;
+  liTipo.textContent = tipos;
+  listaTipo.appendChild(liTipo);
+  
+  const listaResistencia = document.getElementById("resistantPokemon");
+  const liResistencia = document.createElement("li");
+  
+  const resistencia = item.resistant;
+  
+  liResistencia.textContent = resistencia;
+  listaResistencia.appendChild(liResistencia);
+  
+  const listaDebilidad = document.getElementById("weaknessesPokemon");
+  const liDebilidad = document.createElement("li");
+
+  const debilidad = item.weaknesses;
+  liDebilidad.textContent = debilidad;
+  listaDebilidad.appendChild(liDebilidad);
+  
+  })
+})
+
+//MENU DESPLEGABLE
+
+document.getElementById("menuDesplegable").addEventListener("change", function () {
+
+
+  const elementoSeleccionado = document.getElementById("menuDesplegable").value;
+  const menuDesp = dataImportada.filter(poke => poke.type == elementoSeleccionado);
+  const names = menuDesp.map(nombres => nombres.name);
+
+  names.forEach(item => {
+    console.log(item)
+
+    const creandoLista = document.getElementById("lista");
+    const creandoLi = document.createElement("li");
+
+    creandoLi.textContent = item;
+
+    creandoLista.appendChild(creandoLi);
+
+
+  });
+
+
 });
 
 
-document.getElementById("tiposPokemon").addEventListener("change", function () {
-  
-  
-  const elementoSeleccionado = document.getElementById("tiposPokemon").value;
-  let tipoP = document.querySelector("#tipo");
-
-  datos.dropdown(dataImportada, elementoSeleccionado, tipoP)
-
-  /*const listaPokeTipo = dataImportada.filter(poke => elementoSeleccionado == poke.type);
-  const names = listaPokeTipo.map(nombres => nombres.name);
-
-  //const imgSelec = listaPokeTipo.map(imagenes => imagenes.img)
 
 
-  tipoP.innerHTML = names;*/
 
 
-  //console.log(imgSelec)
-});
+//console.log(creandoLista)
+
+
 
 
 

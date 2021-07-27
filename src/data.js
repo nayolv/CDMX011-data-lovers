@@ -1,5 +1,5 @@
 const datos = {
-
+/*
 searching:function(dataImportada, tarjetaInfo, tipoP, resistenciaP, debilidadesP){
 
   dataImportada.forEach(poke => {
@@ -13,9 +13,10 @@ searching:function(dataImportada, tarjetaInfo, tipoP, resistenciaP, debilidadesP
 
     if (filtradoPorNombre === tarjetaInfo) {
 
-      tipoP.textContent = busquedaTipo.replaceAll(",", "\n");
-      resistenciaP.textContent = buesquedaResistencia.replaceAll(",", "\n");
+      tipoP.textContent = busquedaTipo.replaceAll(",", " ");
+      resistenciaP.textContent = buesquedaResistencia.replaceAll(",", " ");
       debilidadesP.textContent = busqueaDebilidades.replaceAll(",", " ");
+
       document.getElementById("imagen").src = imgSelec;
 
     }
@@ -23,13 +24,16 @@ searching:function(dataImportada, tarjetaInfo, tipoP, resistenciaP, debilidadesP
   });
 },
 
+
+/*
 dropdown:function(dataImportada, elementoSeleccionado, tipoP){
+
   const listaPokeTipo = dataImportada.filter(poke => elementoSeleccionado == poke.type);
   const names = listaPokeTipo.map(nombres => nombres.name);
 
-  tipoP.innerHTML = names;
+  tipoP.textContent = names;
 
-}
+}*/
 
 };
 
