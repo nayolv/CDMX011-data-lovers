@@ -25,10 +25,7 @@ header{
     width: 170px;
     height: 100px;
     background-color: transparent;
-<<<<<<< HEAD
     top: -15%;
-=======
->>>>>>> ef813fbe5b7c98a3e3ab724972d7a8f0808f8fcb
 }
 
 .search{
@@ -61,16 +58,6 @@ border-radius: 20px 0px 0px 20px;
     justify-content: center;
     margin-top: -3%;    
 
-<<<<<<< HEAD
-img{
-    background-color: white;
-    border-radius: 5%;
- margin: 2%;
-
-
-}
-
-
 
 h3{
   text-transform: capitalize;
@@ -97,57 +84,3 @@ margin-left: 50%;
 flex-wrap: wrap;
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }*/
-=======
-}
-#menuDesplegable{
-    height: 50px;
-    width: 300px;
-   border-radius: 20px 20px 20px 20px;
-}
-
-img{
-    background-color: white;
-    border-radius: 5%;
-    margin: 5%;
-}
-
-
-#imagenes{
-    background-color: tomato;
-    display: flex;
-    width: 900px;
-    margin-right: 50%;
-    margin-left: 20%;
-    margin-top: 10%;
-    flex-wrap: wrap;
-    
-   
- }
-
- h3{
-    font-family: 'Quicksand', sans-serif;
-    text-transform: capitalize;
-   margin-left: -13%;
-  
-
- }
-   
-
-#tarjeta{
-    display: flex;
-    background-color: tomato;
-    font-family: 'Quicksand', sans-serif;
-    width: 200px;
-    margin-left: 40%;
-    margin-right: 50%;
-    margin-top: 1%;
-    flex-wrap: wrap;
-
-body{
-    background-color: #DBFDB9;
-}
-#imagen{
-    background-color: transparent;
-}
-
->>>>>>> ef813fbe5b7c98a3e3ab724972d7a8f0808f8fcb

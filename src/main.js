@@ -71,38 +71,7 @@ document.getElementById("btnSearch").addEventListener("click", function () {
   })
 })
 
-<<<<<<< HEAD
 //MENU DESPLEGABL
-=======
-//MENU DESPLEGABLE
-
-document.getElementById("menuDesplegable").addEventListener("change", function () {
-
-
-  const elementoSeleccionado = document.getElementById("menuDesplegable").value;
-  const menuDesp = dataImportada.filter(poke => poke.type == elementoSeleccionado);
-
-  menuDesp.forEach(item => {
-
-    const images = item.img;
-    let contenedorImg = document.getElementById("imagenes");
-    const elementoImg = document.createElement("img");
-
-    elementoImg.src = images;
-    contenedorImg.appendChild(elementoImg);
-    
-    const nombres = item.name;
-    contenedorImg = document.getElementById("imagenes");
-    const names = document.createElement("h3");
-
-    names.textContent = nombres;
-    contenedorImg.appendChild(names);
-
-  })
-
- 
-  const names = menuDesp.map(nombres => nombres.name);
->>>>>>> ef813fbe5b7c98a3e3ab724972d7a8f0808f8fcb
 
   document.getElementById("menuDesplegable").addEventListener("change", function () {
 
@@ -133,7 +102,6 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
   
 
 
-<<<<<<< HEAD
 });
 
 
@@ -143,8 +111,6 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
 
 
 //console.log(creandoLista)
-=======
->>>>>>> ef813fbe5b7c98a3e3ab724972d7a8f0808f8fcb
 
 });
 
