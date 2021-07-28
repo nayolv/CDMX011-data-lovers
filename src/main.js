@@ -21,7 +21,7 @@ document.getElementById("btnSearch").addEventListener("click", function () {
     const liTipo = document.createElement("li");
 
     const tipos = item.type;
-    liTipo.textContent = tipos;
+    liTipo.textContent = "TIPO: " + tipos;
     listaTipo.appendChild(liTipo);
 
     const listaResistencia = document.getElementById("resistantPokemon");
@@ -29,14 +29,14 @@ document.getElementById("btnSearch").addEventListener("click", function () {
 
     const resistencia = item.resistant;
 
-    liResistencia.textContent = resistencia;
+    liResistencia.textContent = "RESISTENCIA " + resistencia;
     listaResistencia.appendChild(liResistencia);
 
     const listaDebilidad = document.getElementById("weaknessesPokemon");
     const liDebilidad = document.createElement("li");
 
     const debilidad = item.weaknesses;
-    liDebilidad.textContent = debilidad;
+    liDebilidad.textContent = "DEBILIDAD " + debilidad;
     listaDebilidad.appendChild(liDebilidad);
 
 
@@ -51,9 +51,41 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
 
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
   const menuDesp = dataImportada.filter(poke => poke.type == elementoSeleccionado);
-  const images = menuDesp.map(imagenes => imagenes.img);
+
+  menuDesp.forEach(item => {
+
+    const images = item.img;
+    let contenedorImg = document.getElementById("imagenes");
+    const elementoImg = document.createElement("img");
+
+    elementoImg.src = images;
+    contenedorImg.appendChild(elementoImg);
+    
+    const nombres = item.name;
+    contenedorImg = document.getElementById("imagenes");
+    const names = document.createElement("h3");
+
+    names.textContent = nombres;
+    contenedorImg.appendChild(names);
+
+  })
+
+  /*const images = menuDesp.map(imagenes => imagenes.img);
+  const names = menuDesp.map (nombres => nombres.name);
+  console.log(names)
+
+  names.forEach(item=>{
+    const contenedorImg = document.getElementById("imagenes");
+    const nombres = document.createElement("h3");
+
+    nombres.textContent = item;
+    contenedorImg.appendChild(nombres);
+
+  })
 
   images.forEach(item => {
+    const name = item.name;
+    console.log(name);
 
 
     const contenedorImg = document.getElementById("imagenes");
@@ -62,7 +94,7 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
     elementoImg.src = item;
     contenedorImg.appendChild(elementoImg);
 
-  });
+  });*/
 
 
 });
