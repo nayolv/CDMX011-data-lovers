@@ -4,7 +4,7 @@ import data from './data/pokemon/pokemon.js';
 
 const dataImportada = data.pokemon;
 
-
+//BUSCADOR
 document.getElementById("btnSearch").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
@@ -42,30 +42,39 @@ document.getElementById("btnSearch").addEventListener("click", function () {
   })
 })
 
-//MENU DESPLEGABLE
+//MENU DESPLEGABL
 
-document.getElementById("menuDesplegable").addEventListener("change", function () {
-
-
-  const elementoSeleccionado = document.getElementById("menuDesplegable").value;
-  const menuDesp = dataImportada.filter(poke => poke.type == elementoSeleccionado);
-  const names = menuDesp.map(nombres => nombres.name);
-
-  names.forEach(item => {
-    console.log(item)
-
-    const creandoLista = document.getElementById("lista");
-    const creandoLi = document.createElement("li");
-
-    creandoLi.textContent = item;
-
-    creandoLista.appendChild(creandoLi);
+  document.getElementById("menuDesplegable").addEventListener("change", function () {
 
 
-  });
+    const elementoSeleccionado = document.getElementById("menuDesplegable").value;
+    const menuDesp = dataImportada.filter(poke => poke.type == elementoSeleccionado);
+  
+    menuDesp.forEach(item => {
+
+      const images = item.img;
+      let contenedorImg = document.getElementById("imagenes");
+      const elementoImg = document.createElement("img");
+  
+      elementoImg.src = images;
+      contenedorImg.appendChild(elementoImg);
+
+      const nombres = item.name;
+      contenedorImg = document.getElementById("imagenes");
+      const names = document.createElement("h3");
+  
+      names.textContent = nombres;
+      contenedorImg.appendChild(names);
+  
+     
+  
+  
+    })
+  
 
 
 });
+
 
 
 
