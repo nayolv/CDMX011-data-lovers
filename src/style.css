@@ -1,27 +1,19 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
 body{
-    
     background-color: #DBFDB9;
-    background-image: url(https://i.ibb.co/kQYjxs9/Be-Funky-design.jpg);
-    margin: 0; 
-    padding: 0;
-
-
 }
 
 header{
     background-color: #3A4AD8;
-    border: rgba(255, 0, 0, 0.5) px double;
-    width: 100%;
+    display: flex;
+    margin-top: 0px;    
+    width: cover;
     height: 120px;
 }
 
 
 #logo{
-    margin-left: 1%;
-    margin-top: 1%;
+    position: relative;
     width: 170px;
     height: 100px;
     background-color: transparent;
@@ -30,10 +22,9 @@ header{
 
 .search{
     display: flex;
-    justify-content: flex-end;
-    margin-top: -10%;
-    margin-right: 10%;
-    
+    justify-content: flex-end;    
+    width: 1300px;
+    margin-top: 5%;
     
 }
 #buscador{
@@ -53,10 +44,15 @@ border-radius: 20px 0px 0px 20px;
     border-radius: 0px 15px 15px 0px;
   
 }
-#menu{
-    display: flex;
-    justify-content: center;
-    margin-top: -3%;    
+
+img{
+    background-color: rgb(238, 238, 238);
+    border-radius: 5%;
+    margin: 2%;
+
+
+}
+
 
 
 h3{
@@ -73,6 +69,11 @@ h3{
 
 }
 
+#info{
+    background-color: white;
+    top: 10%;
+    width: 50%;
+}
 /*#info{
 display: flex;
 text-align: justify;
