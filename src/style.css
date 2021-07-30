@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 body{
+    
     background-color: #DBFDB9;
+   
 }
+
+#pokeTarjeta{
+    margin-top: 5%;
+    background-color: violet;
+    width: 15%;
+    height: 300px;
+    margin-left: 5%;
+    left: 80%;
+}
+
+#pokeInicio{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 80%;
+}
+
+ 
 
 header{
     background-color: #3A4AD8;
@@ -46,18 +66,23 @@ border-radius: 20px 0px 0px 20px;
 }
 
 img{
+    position: relative;
     background-color: rgb(238, 238, 238);
     border-radius: 5%;
-    margin: 2%;
-
-
+    width: 75%;
+    top: 10%;
+    left: 8%;
 }
 
 
 
-h3{
+p{
+  position: relative;
   text-transform: capitalize;
-  top: 300%;  
+  size: 48px;
+  top: 15%;
+  left: 15%;
+    
 }
 
 #imagenes{
