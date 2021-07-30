@@ -3,12 +3,18 @@ import data from './data/pokemon/pokemon.js';
 //import data from './data/pokemon/pokemon.js';
 
 const dataImportada = data.pokemon;
+let cambio = document.getElementById("tarjeta");
+cambio.style.visibility = 'hidden';
+ 
+//  BARRA BUSCAR
 
+cambio.style.visibility = 'hidden';
 
 document.getElementById("btnSearch").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
+  cambio.style.visibility = 'visible';
 
 
   buscadorFuncional.forEach(item => {
@@ -36,7 +42,7 @@ document.getElementById("btnSearch").addEventListener("click", function () {
     const liDebilidad = document.createElement("li");
 
     const debilidad = item.weaknesses;
-    liDebilidad.textContent = "DEBILIDAD " + debilidad;
+    liDebilidad.textContent = "DEBILIDAD: " + debilidad;
     listaDebilidad.appendChild(liDebilidad);
 
 
@@ -69,6 +75,8 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
     contenedorImg.appendChild(names);
 
   })
+
+
 
   /*const images = menuDesp.map(imagenes => imagenes.img);
   const names = menuDesp.map (nombres => nombres.name);
