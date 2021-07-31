@@ -1,21 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 body{
-    
     background-color: #DBFDB9;
     background-image: url(https://i.ibb.co/kQYjxs9/Be-Funky-design.jpg);
+    background-size: cover;
     margin: 0; 
     padding: 0;
+    height: 500px;
 
 
 }
-/*
-header{
-    background-color: #3A4AD8;
-    border: rgba(255, 0, 0, 0.5) px double;
-    width: 100%;
-    height: 120px;
-}*/
 
 .banner {
     overflow: hidden;
@@ -33,6 +27,7 @@ header{
     height: 100px;
     background-color: transparent;
 }
+
 
 #buscador{
 background-color: rgb(247, 247, 247);
@@ -57,20 +52,16 @@ border-radius: 20px 0px 0px 20px;
    border-radius: 20px 20px 20px 20px;
 }
 
-img{
-    background-color: white;
-    border-radius: 5%;
-    margin: 5%;
-}
+
 
 
 #imagenes{
-    background-color: tomato;
+    background-color: rgb(255, 248, 247);
     display: flex;
     width: 900px;
     margin-right: 50%;
     margin-left: 20%;
-    margin-top: 10%;
+    margin-top: 0;
     flex-wrap: wrap;
     
    
@@ -85,22 +76,44 @@ img{
  }
    
 
-#tarjeta{
+#caracteristicas{
     display: flex;
-    background-color: tomato;
+    background-color: rgb(255, 255, 255);
     font-family: 'Quicksand', sans-serif;
-    width: 200px;
+    width: 15%;
+    border-radius: 20px;
     margin-left: 40%;
     margin-right: 50%;
     margin-top: 1%;
     flex-wrap: wrap;
 
 }
+
 #imagen{
     background-color: transparent;
+    align-items: center;
+}
+#textos{
+   margin-left: 5%;
 }
 
+#pokeTarjeta{
+    margin-top: 5%;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 15%;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    text-align: justify;
+}
 
+#pokeInicio{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+   
+}
 
 /*
 #info{
@@ -115,6 +128,66 @@ flex-wrap: wrap;
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }*/
 
+.flex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+    background: rgba(235, 222, 151, 0.719);
+    height: 30px;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.445);
+}
+.contenido-modal{
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    background: rgb(145, 175, 117);
+    margin: auto;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+    animation-name: modal;
+    animation-duration: 1s;
+}
+.close{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: bold;
+}
+.close:hover{
+    color: salmon;
+    text-decoration: none;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+}
+.modal-body{
+    padding: 20px 16px;
+}
+
+@keyframes modal{
+    from{top: -330px; opacity: 0;}
+    to{top:0; opacity: 1;}
+
+}
+
 @media screen and (max-width: 500px) {
     .logo{
         float: none;
@@ -123,4 +196,8 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     .search {
       float: none;
     }
+    .modal{
+        float: none;
+    }
+   
   }
