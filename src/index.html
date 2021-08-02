@@ -9,54 +9,95 @@
 
 <body>
   <header>
-
-    <img id="logo"
+    <div class="banner">
+      <!-- <img id="logo"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1280px-Pok%C3%A9mon_GO_logo.svg.png">
+   -->
+  </div>
 
-    <div class="search">
-      <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
-      <button id="btnSearch">BUSCAR</button>
-    </div>
-    
-<div id="menu" >
-    <select name="" id="menuDesplegable">
-      <option disabled selected>Selecciona una opción</option>
-      <option value="electric">Electrico</option>
-      <option value="grass">Planta</option>
-      <option value="poison">Veneno</option>
-      <option value="fire">Fuego</option>
-      <option value="flying">Volador</option>
-      <option value="bug">Bicho</option>
-      <option value="normal">Normal</option>
-      <option value="fighting">Lucha</option>
-      <option value="psychic">Psiquico</option>
-      <option value="rock">Roca</option>
-      <option value="ground">Tierra</option>
-      <option value="ice">Hielo</option>
-      <option value="rock">Roca</option>
-      <option value="water">Agua</option>
-      <option value="fairy">Hada</option>
-      <option value="dark">Siniestro</option>
-      <option value="ghost">Fantasma</option>
-      <option value="dragon">Dragón</option>
-    </div>
-    </select>
-  
+      
+
   </header>
 
   <main>
-    <section id="pokeInicio">
-      
-    </section>
 
-   <div id="info">
-    <img id="imagen">
-   </div>
-    
-
-    <div id="imagenes">
+    <div class="search">
+      <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
+    <button id="btnSearch">BUSCAR</button>
     </div>
-     
+
+    <div id="menu">
+      <select name="" id="menuDesplegable">
+        <option disabled selected>Selecciona una opción</option>
+        <option value="electric">Electrico</option>
+        <option value="grass">Planta</option>
+        <option value="poison">Veneno</option>
+        <option value="fire">Fuego</option>
+        <option value="flying">Volador</option>
+        <option value="bug">Bicho</option>
+        <option value="normal">Normal</option>
+        <option value="fighting">Lucha</option>
+        <option value="psychic">Psiquico</option>
+        <option value="rock">Roca</option>
+        <option value="ground">Tierra</option>
+        <option value="ice">Hielo</option>
+        <option value="rock">Roca</option>
+        <option value="water">Agua</option>
+        <option value="fairy">Hada</option>
+        <option value="dark">Siniestro</option>
+        <option value="ghost">Fantasma</option>
+        <option value="dragon">Dragón</option>
+      </select>
+
+      <button id="botonNuevaBusqueda">Nueva busqueda</button>
+
+    </div>
+
+
+    <!--MODAL-->
+
+    <div id="miModal" class="modal">
+      <div class="flex" id="flex">
+        <div class="contenido-modal">
+          <span class="close" id="close">&times;</span>
+          <h1>ACERCA DE:</h1>
+          <p id="informacion"></p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--POKEMONES EN PANTALLA-->
+
+
+      <section id="pokeInicio">
+
+      </section>
+
+      <!--RESULTADOS BUSCADOR-->
+  
+      <div id="caracteristicas">    
+        <img id="imagen">
+        <section id="textos">
+        <p id="tipo"></p>
+        <p id="resistencia"></p>
+        <p id="debilidad"></p>
+      </section>  
+      </div>
+        <!--MENU DESPLEGABLE-->
+        <div id="imagenes">
+
+        </div>
+
+      <!-- <div id="info">Guarda la info buscador
+   
+  </div>
+  -->
+
+
+
+
 
   </main>
   <script src="main.js" type="module"></script>
