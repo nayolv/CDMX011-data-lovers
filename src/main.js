@@ -15,7 +15,6 @@ function pokePantallaInicial() {
     const contenedorImgyNombre = document.createElement("div");
     contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
     contenedorImgyNombre.setAttribute("class", "claseTarjeta");
-
     contenedorInicio.appendChild(contenedorImgyNombre);
 
     //CONDICIONAL PARA MOSTRAR SOLO N° POKEMONES
@@ -25,7 +24,6 @@ function pokePantallaInicial() {
     if (num <= "030") {
        liNum.textContent = "N° " + num;
     contenedorImgyNombre.appendChild(liNum);
-    console.log(num);
     
     const images = item.img;
     const elementoImg = document.createElement("img");
@@ -33,10 +31,10 @@ function pokePantallaInicial() {
     contenedorImgyNombre.appendChild(elementoImg);
 
     //tipo pokemon
-    const liTipo = document.createElement("p");
+    const liNombre = document.createElement("p");
     const nombre = item.name;
-    liTipo.textContent = nombre;
-    contenedorImgyNombre.appendChild(liTipo);
+    liNombre.textContent = nombre;
+    contenedorImgyNombre.appendChild(liNombre);
       
     }
     //POPUP ABOUT 
@@ -68,37 +66,62 @@ document.getElementById("btnSearch").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
-
+/*
   document.getElementById("pokeInicio").style.display = "none";
-
+  document.getElementById("pokeDesplegable").style.display = "none";
+  document.getElementById("pokeBuscador").style.visibility = "visible";*/
 
   buscadorFuncional.forEach(item => {
 
-    //imagen pokemon
-    const imgSelec = item.img;
-    document.getElementById("imagen").src = imgSelec;
+  let modalP = document.getElementById("modalPoke");
+    modalP.style.display = "block";
+    const imagenP = document.getElementById("imgPoke");
+    const tipoP = document.getElementById("tipo");
+    const resistenciaP =document.getElementById("resistencia");
+    const debilidadP = document.getElementById("debilidad");
 
-    const tipo = item.type;
-    document.getElementById("tipo").textContent = tipo;
+     //IMAGEN
+    const pokeSelec =item.img;
+    imagenP.src = pokeSelec;
+    console.log(pokeSelec)
+    //TIPO
+    const type = item.type;
+    tipoP.textContent = type;
+    //RESISTENCIA
+    const resistant = item.resistant;
+    resistenciaP.textContent = resistant;
+    //DEBILIDAD
+    const weaknesses = item.weaknesses;
+    debilidadP.textContent = weaknesses;
 
-    const resistencia = item.resistant;
-    document.getElementById("resistencia").textContent = resistencia;
+  });
+  let cerrarP = document.getElementById("closePoke");
+  cerrarP.addEventListener("click", function () {
+    let modalP = document.getElementById("modalPoke");
+    modalP.style.display = "none";
+  });
 
-    const debilidad = item.weaknesses;
-    document.getElementById("debilidad").textContent = debilidad;
+  window.addEventListener("click", function (e) {
+    let flexP = document.getElementById("flexPoke");
+    if (e.target == flexP) {
+      let modalP = document.getElementById("modalPoke");
+      modalP.style.display = "none";
+    }
 
-    /*const contenedorInicio = document.getElementById("pokeInicio");
-    contenedorInicio.style.visibility = 'hidden';*/
   });
 
 }),
 
-  //recupera el valor del select (MENU DESPLEGABLE)
+  //RESULTADO MENU DESPLEGABLE
 
   document.getElementById("menuDesplegable").addEventListener("change", function () {
     recuperarSeleccionado();
 
     document.getElementById("pokeInicio").style.display = "none";
+    //document.getElementById("pokeBuscador").style.display = "none";
+    document.getElementById("menuDesplegable").style.visibility = "visible";
+
+
   });
 
 function recuperarSeleccionado() {
@@ -107,18 +130,46 @@ function recuperarSeleccionado() {
 
   //recupera imagen y nombre del objeto
   menuDesp.forEach(item => {
-    let contenedor = document.getElementById("imagenes");
+    
+    const contenedorInicio = document.getElementById("pokeDesplegable");
+    const contenedorImgyNombre = document.createElement("div");
+    contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
+    contenedorImgyNombre.setAttribute("class", "claseTarjeta");
+    contenedorInicio.appendChild(contenedorImgyNombre);
 
+    //IMAGEN POKEMON
     const images = item.img;
     const elementoImg = document.createElement("img");
     elementoImg.src = images;
-    contenedor.appendChild(elementoImg);
+    contenedorImgyNombre.appendChild(elementoImg);
 
-    const names = document.createElement("p");
-    const nombres = item.name;
+    //NOMBRE POKEMON
+    const liNombre = document.createElement("p");
+    const nombre = item.name;
+    liNombre.textContent = nombre;
+    contenedorImgyNombre.appendChild(liNombre);
 
-    names.innerHTML = nombres;
-    contenedor.appendChild(names);
+     //POPUP ABOUT 
+     let modal = document.getElementById("miModal");
+     let flex = document.getElementById("flex");
+     let cerrar = document.getElementById("close");
+ 
+     contenedorImgyNombre.addEventListener("click", function () {
+       modal.style.display = "block";
+       const contenedorModal = document.getElementById("informacion");
+       const acercaDe =item.about;
+       contenedorModal.textContent = acercaDe;
+ 
+     });
+     cerrar.addEventListener("click", function () {
+       modal.style.display = "none";
+     });
+ 
+     window.addEventListener("click", function (e) {
+       if (e.target == flex) {
+         modal.style.display = "none";
+       }
+     });
   });
 
 }

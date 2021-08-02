@@ -10,12 +10,12 @@
 <body>
   <header>
     <div class="banner">
-      <!-- <img id="logo"
+      <!-- <img class="logo"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1280px-Pok%C3%A9mon_GO_logo.svg.png">
    -->
-  </div>
+    </div>
 
-      
+
 
   </header>
 
@@ -23,7 +23,7 @@
 
     <div class="search">
       <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
-    <button id="btnSearch">BUSCAR</button>
+      <button id="btnSearch">BUSCAR</button>
     </div>
 
     <div id="menu">
@@ -62,7 +62,6 @@
           <span class="close" id="close">&times;</span>
           <h1>ACERCA DE:</h1>
           <p id="informacion"></p>
-
         </div>
       </div>
     </div>
@@ -71,30 +70,32 @@
     <!--POKEMONES EN PANTALLA-->
 
 
-      <section id="pokeInicio">
+    <section id="pokeInicio" class="inicio">
 
-      </section>
+    </section>
 
-      <!--RESULTADOS BUSCADOR-->
-  
-      <div id="caracteristicas">    
-        <img id="imagen">
-        <section id="textos">
-        <p id="tipo"></p>
-        <p id="resistencia"></p>
-        <p id="debilidad"></p>
-      </section>  
-      </div>
-        <!--MENU DESPLEGABLE-->
-        <div id="imagenes">
+    <!--RESULTADOS BUSCADOR-->
+    <!-- <section id="pokeBuscador" class="buscador">
+    </section>-->
 
+    <div id="modalPoke" class="modalBuscador">
+      <div id="flexPoke" class="flexBuscador">
+        <div class="contenido-modal-buscador">
+          <span class="closeBuscador" id="closePoke">&times;</span>
+          <section class="imagenPoke"><img id="imgPoke"></section>
+          <section class="info">
+          <p id="tipo"></p>
+          <p id="resistencia"></p>
+          <p id="debilidad"></p>
+        </section>
         </div>
+      </div>
+    </div>
 
-      <!-- <div id="info">Guarda la info buscador
-   
-  </div>
-  -->
+    <!--MENU DESPLEGABLE-->
+    <section id="pokeDesplegable" class="desplegable">
 
+    </section>
 
 
 
