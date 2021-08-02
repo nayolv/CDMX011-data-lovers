@@ -1,40 +1,38 @@
+
 const datos = {
-/*
-searching:function(dataImportada, tarjetaInfo, tipoP, resistenciaP, debilidadesP){
-
-  dataImportada.forEach(poke => {
-
     
-    const filtradoPorNombre = poke.name;
-    const imgSelec = poke.img;
-    const busquedaTipo = "TIPO: " + poke.type;
-    const buesquedaResistencia = " RESISTENCIA: " + poke.resistant;
-    const busqueaDebilidades = "DEBILIDAD: " + poke.weaknesses;
 
-    if (filtradoPorNombre === tarjetaInfo) {
+  /*pokePantallaInicial(dataImportada) {
+    dataImportada.forEach(item => {
+      //CREANDO div para las tarjetas
+      const contenedorInicio = document.getElementById("pokeInicio");
+      const contenedorImgyNombre = document.createElement("div");
+      contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
+      contenedorImgyNombre.setAttribute("class", "claseTarjeta");
+      contenedorInicio.appendChild(contenedorImgyNombre);
+  
+      //CONDICIONAL PARA MOSTRAR SOLO N° POKEMONES
+      
+      const liNum = document.createElement("p");
+      const num = item.num;
+      if (num <= "030") {
+         liNum.textContent = "N° " + num;
+      contenedorImgyNombre.appendChild(liNum);
+      
+      const images = item.img;
+      const elementoImg = document.createElement("img");
+      elementoImg.src = images;
+      contenedorImgyNombre.appendChild(elementoImg);
+  
+      //tipo pokemon
+      const liNombre = document.createElement("p");
+      const nombre = item.name;
+      liNombre.textContent = nombre;
+      contenedorImgyNombre.appendChild(liNombre);
+  
+      }
+      })
+  }
+  }*/
 
-      tipoP.textContent = busquedaTipo.replaceAll(",", " ");
-      resistenciaP.textContent = buesquedaResistencia.replaceAll(",", " ");
-      debilidadesP.textContent = busqueaDebilidades.replaceAll(",", " ");
-
-      document.getElementById("imagen").src = imgSelec;
-
-    }
-
-  });
-},
-
-
-/*
-dropdown:function(dataImportada, elementoSeleccionado, tipoP){
-
-  const listaPokeTipo = dataImportada.filter(poke => elementoSeleccionado == poke.type);
-  const names = listaPokeTipo.map(nombres => nombres.name);
-
-  tipoP.textContent = names;
-
-}*/
-
-};
-
-export default datos
+  export default datos;

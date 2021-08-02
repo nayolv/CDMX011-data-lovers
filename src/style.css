@@ -1,39 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    background-color: #DBFDB9;
     background-image: url(https://i.ibb.co/kQYjxs9/Be-Funky-design.jpg);
     background-size: cover;
-    margin: 0; 
-    padding: 0;
-    height: 500px;
-
-#pokeTarjeta{
-    margin-top: 5%;
-    background-color: rgb(114, 107, 114);
-    width: 15%;
-    height: 300px;
-    margin-left: 5%;
-    left: 80%;
-}
-
 }
 
 .banner {
     overflow: hidden;
-    background-color: rgb(4, 0, 255);
+    background-image: url(/banner.jpg);
     padding: 20px 10px;
-    height: 100px;
+    height: 100px; 
   }
+  
   .search {
     float: right;
   }
 
 .logo{
     
-    width: 170px;
-    height: 100px;
+    width: 250px;
+    height: 110px;
     background-color: transparent;
+    right: 900%;
 }
 
 
@@ -59,82 +51,53 @@ border-radius: 20px 0px 0px 20px;
     width: 300px;
    border-radius: 20px 20px 20px 20px;
 }
-
-
-
-
-#imagenes{
-    background-color: rgb(255, 248, 247);
-    display: flex;
-    width: 900px;
-    margin-right: 50%;
-    margin-left: 20%;
-    margin-top: 0;
-    flex-wrap: wrap;
-    
-   
- }
-
- h3{
-    font-family: 'Quicksand', sans-serif;
-    text-transform: capitalize;
-   margin-left: -13%;
-  
-
- }
    
 
-#caracteristicas{
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    font-family: 'Quicksand', sans-serif;
-    width: 15%;
-    border-radius: 20px;
-    margin-left: 40%;
-    margin-right: 50%;
-    margin-top: 1%;
-    flex-wrap: wrap;
-
-}
-
-#imagen{
-    background-color: transparent;
-    align-items: center;
-}
-#textos{
-   margin-left: 5%;
-}
-
-#pokeTarjeta{
-    margin-top: 5%;
-    margin: 10px;
-    background-color: rgb(255, 255, 255);
-    width: 15%;
-    border-radius: 20px;
-    font-family: 'Quicksand', sans-serif;
-    text-transform: capitalize;
-    text-align: justify;
-}
-
-#pokeInicio{
+.inicio{
     display: flex;
     align-items: center;
     flex-wrap: wrap; 
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
    
 }
+.claseTarjeta{
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+    flex-direction: row;
+    cursor: pointer;
+}
 
-/*
-#info{
+.desplegable{
 display: flex;
-text-align: justify;
-background-color: rgb(189, 85, 85);
-width: 200px;
-height: 300px;
-margin-right: 50%;
-margin-left: 50%;
-flex-wrap: wrap;
-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+flex-wrap: wrap; 
+flex-direction: row;
+text-align: center;
+cursor: pointer;
+justify-content: center;
+
+}
+/*.buscador{
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }*/
+
+#prueba{
+    background-color: tomato;
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+}
 
 .flex{
     width: 100%;
@@ -147,8 +110,9 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 h1{
     font-size: 20px;
     text-align: center;
-    background: rgba(235, 222, 151, 0.719);
+    background: #89C893;
     height: 30px;
+    margin-top: 0;
 }
 
 .modal{
@@ -160,35 +124,101 @@ h1{
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.445);
 }
 .contenido-modal{
     font-family: 'Quicksand', sans-serif;
     position: relative;
-    background: rgb(145, 175, 117);
+    background: #49896F;
     margin: auto;
-    width: 40%;
+    width: 30%;
     border-radius: 10px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.438);
     animation-name: modal;
     animation-duration: 1s;
 }
 .close{
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 .close:hover{
-    color: salmon;
+    color: rgb(160, 0, 0);
     text-decoration: none;
     cursor: pointer;
 }
-p{
-    text-align: center;
+#informacion{
+    text-align: justify;
 }
 .modal-body{
     padding: 20px 16px;
 }
+
+
+/*MODAL BUSCADOR*/
+.flexBuscador{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalBuscador{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.contenido-modal-buscador{
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    background: #cf1111;
+    margin: auto;
+    width: 200px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.438);
+    animation-name: modal;
+    animation-duration: 1s;
+}
+.imagenPoke{
+    display: flex;
+    width: 150px;
+    margin-left: 25px;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.info{
+    text-align: center;
+}
+
+.closePoke{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+.closePoke:hover{
+    color: rgb(160, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalBuscador-body{
+    padding: 20px 16px;
+}
+
+
+
+
+
+
 
 @keyframes modal{
     from{top: -330px; opacity: 0;}
@@ -207,5 +237,17 @@ p{
     .modal{
         float: none;
     }
-   
+    .inicio{
+        flex-direction: column;
+    }
+    .claseTarjeta{
+        flex-direction: column;
+    }
+    .desplegable{
+    flex-direction: column;
+    }
+    .buscador{
+        flex-direction: column;
+    }
+  
   }

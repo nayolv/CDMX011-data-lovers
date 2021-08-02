@@ -1,45 +1,64 @@
-import datos from './data.js';
+//import datos from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const dataImportada = data.pokemon;
-let elementoSeleccionado;
+
 //Pokemon en pantalla inicial
 window.onload = function () {
   pokePantallaInicial();
 };
 
-//Trae el elemento seleccionado del menu desplegable.
-document.getElementById("menuDesplegable").addEventListener("change", function () {
-  elementoSeleccionado = document.getElementById("menuDesplegable").value;
-});
-
-
-function pokePantallaInicial() 
-  menuDesp.forEach(item => {
+function pokePantallaInicial() {
+  dataImportada.forEach(item => {
     //CREANDO div para las tarjetas
     const contenedorInicio = document.getElementById("pokeInicio");
     const contenedorImgyNombre = document.createElement("div");
     contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
-    contenedorImgyNombre.setAttribute("class", "claseTarjeta")
+    contenedorImgyNombre.setAttribute("class", "claseTarjeta");
     contenedorInicio.appendChild(contenedorImgyNombre);
-    //numero pokemon
-    const parrafNumber = document.createElement("p");
-    const number = item.num;
-    const numero=parrafNumber.textContent = "N.°" + number;
-    contenedorImgyNombre.innerHTML=numero;
+
+    //CONDICIONAL PARA MOSTRAR SOLO N° POKEMONES
+    
+    const liNum = document.createElement("p");
+    const num = item.num;
+    if (num <= "030") {
+       liNum.textContent = "N° " + num;
+    contenedorImgyNombre.appendChild(liNum);
     
     const images = item.img;
     const elementoImg = document.createElement("img");
     elementoImg.src = images;
     contenedorImgyNombre.appendChild(elementoImg);
 
-    //nombre pokemon
-    const liTipo = document.createElement("p");
+    //tipo pokemon
+    const liNombre = document.createElement("p");
     const nombre = item.name;
-    liTipo.textContent = nombre;
-    contenedorImgyNombre.appendChild(liTipo);
+    liNombre.textContent = nombre;
+    contenedorImgyNombre.appendChild(liNombre);
+      
+    }
+    //POPUP ABOUT 
+    let modal = document.getElementById("miModal");
+    let flex = document.getElementById("flex");
+    let cerrar = document.getElementById("close");
+
+    contenedorImgyNombre.addEventListener("click", function () {
+      modal.style.display = "block";
+      const contenedorModal = document.getElementById("informacion");
+      const acercaDe =item.about;
+      contenedorModal.textContent = acercaDe;
+
+    });
+    cerrar.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target == flex) {
+        modal.style.display = "none";
+      }
+    });
   });
-}
 }
 
 //BUSCADOR
@@ -47,32 +66,63 @@ document.getElementById("btnSearch").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
-
+/*
   document.getElementById("pokeInicio").style.display = "none";
-
+  document.getElementById("pokeDesplegable").style.display = "none";
+  document.getElementById("pokeBuscador").style.visibility = "visible";*/
 
   buscadorFuncional.forEach(item => {
 
-    //imagen pokemon
-    const imgSelec = item.img;
-    document.getElementById("imagen").src = imgSelec;
-    // Tipo
-    const tipo= item.type
-    document.getElementById("tipo").textContent="Tipo: "+ tipo;
-    // Resistencia
-    const resistencia = item.resistant;
-    document.getElementById("resistencia").textContent = "Resisitencia: "+ resistencia;
-    // Debilidad
-    const debilidad = item.weaknesses;
-    document.getElementById("debilidad").textContent = "Debilidad: "+debilidad;
+  let modalP = document.getElementById("modalPoke");
+    modalP.style.display = "block";
+    const imagenP = document.getElementById("imgPoke");
+    const tipoP = document.getElementById("tipo");
+    const resistenciaP =document.getElementById("resistencia");
+    const debilidadP = document.getElementById("debilidad");
 
-  })
+     //IMAGEN
+    const pokeSelec =item.img;
+    imagenP.src = pokeSelec;
+    
+    //TIPO
+    const type = item.type;
+    tipoP.textContent = type;
+    //RESISTENCIA
+    const resistant = item.resistant;
+    resistenciaP.textContent = resistant;
+    //DEBILIDAD
+    const weaknesses = item.weaknesses;
+    debilidadP.textContent = weaknesses;
 
-})
+  });
+  let cerrarP = document.getElementById("closePoke");
+  cerrarP.addEventListener("click", function () {
+    let modalP = document.getElementById("modalPoke");
+    modalP.style.display = "none";
+  });
 
-  //recupera el valor del select (MENU DESPLEGABLE)
+  window.addEventListener("click", function (e) {
+    let flexP = document.getElementById("flexPoke");
+    if (e.target == flexP) {
+      let modalP = document.getElementById("modalPoke");
+      modalP.style.display = "none";
+    }
 
-  
+  });
+
+}),
+
+  //RESULTADO MENU DESPLEGABLE
+
+  document.getElementById("menuDesplegable").addEventListener("change", function () {
+    recuperarSeleccionado();
+
+    document.getElementById("pokeInicio").style.display = "none";
+    //document.getElementById("pokeBuscador").style.display = "none";
+    document.getElementById("menuDesplegable").style.visibility = "visible";
+
+
+  });
 
 function recuperarSeleccionado() {
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
@@ -80,32 +130,52 @@ function recuperarSeleccionado() {
 
   //recupera imagen y nombre del objeto
   menuDesp.forEach(item => {
-    const contenedorInicio = document.getElementById("imagenes");
+    
+    const contenedorInicio = document.getElementById("pokeDesplegable");
     const contenedorImgyNombre = document.createElement("div");
     contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
-    contenedorImgyNombre.setAttribute("class", "claseTarjeta")
-    
+    contenedorImgyNombre.setAttribute("class", "claseTarjeta");
     contenedorInicio.appendChild(contenedorImgyNombre);
-    //numero pokemon
-    const parrafNumber = document.createElement("p");
-    const number = item.num;
-    parrafNumber.textContent = "N.°" + number;
-    contenedorImgyNombre.append(number);
-    //imagen pokemon
-   
+
+    //IMAGEN POKEMON
     const images = item.img;
     const elementoImg = document.createElement("img");
     elementoImg.src = images;
-    contenedorImgyNombre.append(elementoImg);
+    contenedorImgyNombre.appendChild(elementoImg);
 
-    //nombre pokemon
-    const liTipo = document.createElement("p");
+    //NOMBRE POKEMON
+    const liNombre = document.createElement("p");
     const nombre = item.name;
-    liTipo.textContent = nombre;
-    contenedorImgyNombre.append(liTipo);
+    liNombre.textContent = nombre;
+    contenedorImgyNombre.appendChild(liNombre);
+
+     //POPUP ABOUT 
+     let modal = document.getElementById("miModal");
+     let flex = document.getElementById("flex");
+     let cerrar = document.getElementById("close");
+ 
+     contenedorImgyNombre.addEventListener("click", function () {
+       modal.style.display = "block";
+       const contenedorModal = document.getElementById("informacion");
+       const acercaDe =item.about;
+       contenedorModal.textContent = acercaDe;
+ 
+     });
+     cerrar.addEventListener("click", function () {
+       modal.style.display = "none";
+     });
+ 
+     window.addEventListener("click", function (e) {
+       if (e.target == flex) {
+         modal.style.display = "none";
+       }
+     });
   });
 
 }
-//trae el input del pokemon ingresado en la busqueda.
-document.getElementById("botonNuevaBusqueda").addEventListener("click", function (){
-});
+
+document.getElementById("botonNuevaBusqueda").addEventListener("click", function () { location.reload() });
+
+/*
+cambio.style.visibility = 'hidden';
+cambio.style.visibility = 'hidden';*/
