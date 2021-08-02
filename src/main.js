@@ -1,22 +1,22 @@
 import datos from './data.js';
 import data from './data/pokemon/pokemon.js';
-//import data from './data/pokemon/pokemon.js';
 
 const dataImportada = data.pokemon;
+let elementoSeleccionado;
 //Pokemon en pantalla inicial
 window.onload = function () {
   pokePantallaInicial();
 };
 
+//Trae el elemento seleccionado del menu desplegable.
+document.getElementById("menuDesplegable").addEventListener("change", function () {
+  elementoSeleccionado = document.getElementById("menuDesplegable").value;
+});
 
-  document.getElementById("botonNuevaBusqueda").addEventListener("click", function (){
-    location.reload();
-    });
 
-function pokePantallaInicial() {
-  
-  dataImportada.forEach(item => {
-    //div para las tarjetas
+function pokePantallaInicial() 
+  menuDesp.forEach(item => {
+    //CREANDO div para las tarjetas
     const contenedorInicio = document.getElementById("pokeInicio");
     const contenedorImgyNombre = document.createElement("div");
     contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
@@ -27,8 +27,7 @@ function pokePantallaInicial() {
     const number = item.num;
     const numero=parrafNumber.textContent = "N.°" + number;
     contenedorImgyNombre.innerHTML=numero;
-
-    //imagen pokemon
+    
     const images = item.img;
     const elementoImg = document.createElement("img");
     elementoImg.src = images;
@@ -39,8 +38,8 @@ function pokePantallaInicial() {
     const nombre = item.name;
     liTipo.textContent = nombre;
     contenedorImgyNombre.appendChild(liTipo);
-
   });
+}
 }
 
 //BUSCADOR
@@ -49,7 +48,11 @@ document.getElementById("btnSearch").addEventListener("click", function () {
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
 
+  document.getElementById("pokeInicio").style.display = "none";
+
+
   buscadorFuncional.forEach(item => {
+
     //imagen pokemon
     const imgSelec = item.img;
     document.getElementById("imagen").src = imgSelec;
@@ -65,14 +68,11 @@ document.getElementById("btnSearch").addEventListener("click", function () {
 
   })
 
-}),
-  //recupera el valor del select
+})
 
-  document.getElementById("menuDesplegable").addEventListener("change", function () {
-    recuperarSeleccionado();
-    document.getElementById("pokeInicio").style.display="none";
+  //recupera el valor del select (MENU DESPLEGABLE)
 
-  });
+  
 
 function recuperarSeleccionado() {
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
@@ -106,3 +106,6 @@ function recuperarSeleccionado() {
   });
 
 }
+//trae el input del pokemon ingresado en la busqueda.
+document.getElementById("botonNuevaBusqueda").addEventListener("click", function (){
+});
