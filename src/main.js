@@ -53,16 +53,11 @@ function pokePantallaInicial() {
       modal.style.display = "none";
     });
 
-    window.addEventListener("click", function (e) {
-      if (e.target == flex) {
-        modal.style.display = "none";
-      }
-    });
   });
 }
 
 //BUSCADOR
-document.getElementById("btnSearch").addEventListener("click", function () {
+document.getElementById("icono").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const buscadorFuncional = dataImportada.filter(poke => poke.name == searchUser);
@@ -79,11 +74,15 @@ document.getElementById("btnSearch").addEventListener("click", function () {
     const tipoP = document.getElementById("tipo");
     const resistenciaP =document.getElementById("resistencia");
     const debilidadP = document.getElementById("debilidad");
+    const nombreP = document.getElementById("namePoke");
 
-     //IMAGEN
+
+    //NOMBRE
+    const name = item.name;
+    nombreP.textContent = name;
+    //IMAGEN
     const pokeSelec =item.img;
     imagenP.src = pokeSelec;
-    console.log(pokeSelec)
     //TIPO
     const type = item.type;
     tipoP.textContent = type;
@@ -101,14 +100,7 @@ document.getElementById("btnSearch").addEventListener("click", function () {
     modalP.style.display = "none";
   });
 
-  window.addEventListener("click", function (e) {
-    let flexP = document.getElementById("flexPoke");
-    if (e.target == flexP) {
-      let modalP = document.getElementById("modalPoke");
-      modalP.style.display = "none";
-    }
-
-  });
+ 
 
 }),
 

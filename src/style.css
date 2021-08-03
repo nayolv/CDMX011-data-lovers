@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=VT323&display=swap');
 
 *{
     margin: 0;
@@ -16,43 +19,47 @@ body{
     height: 100px;
   }
   
-  .search {
-    float: right;
+ .navegacion {
+    background-color: rgb(255, 230, 0);
+    display: flex;
   }
-
-/*.logo{
+  i{
+      position: fixed;
+      margin-left: 260px;
+      margin-top: 8px;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.678);
     
-    width: 170px;
-    height: 100px;
-    background-color: transparent;
-}*/
-
-
+    }
 #buscador{
-background-color: rgb(247, 247, 247);
-width: 200px;
-height: 30px;
-outline: none;
-border-color: transparent;
-border-radius: 20px 0px 0px 20px;
-
-}
-#btnSearch{
-    background-color: rgb(247, 247, 247);
-    height: 38px;
-    border-right: white;    
-    border-radius: 0px 15px 15px 0px;
+    width: 280px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 5px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(241, 243, 130);
+    outline: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 15px;
+    text-align: center;
 
 }
 
 #menuDesplegable{
     height: 50px;
     width: 300px;
-   border-radius: 20px 20px 20px 20px;
+    background-color: rgb(255, 230, 0);
+    border: transparent;
+    outline: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    margin-left: 700px; 
 }
    
 
 .inicio{
+    margin: 50px;
     display: flex;
     align-items: center;
     flex-wrap: wrap; 
@@ -62,34 +69,31 @@ border-radius: 20px 0px 0px 20px;
    
 }
 .claseTarjeta{
-    margin: 10px;
+    margin: 20px;
     background-color: rgb(255, 255, 255);
     width: 200px;
     border-radius: 20px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Oswald', sans-serif;    
     text-transform: capitalize;
     flex-direction: row;
     cursor: pointer;
+    box-shadow: 30px 30px 30px rgba(100, 100, 100, 0.5);
+}
+.claseTarjeta:hover{
+    background-color: #f7a151;
+    transform: scale(1.2);
 }
 
 .desplegable{
 display: flex;
 flex-wrap: wrap; 
 flex-direction: row;
-text-align: center;
+margin: 50px;
 cursor: pointer;
-justify-content: center;
+justify-content: space-between;
+text-align: center;
 
 }
-/*.buscador{
-    display: flex;
-    flex-wrap: wrap; 
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}*/
 
 #prueba{
     background-color: tomato;
@@ -164,6 +168,7 @@ h1{
 
 .modalBuscador{
     display: none;
+    flex-direction: row;
     position: fixed;
     z-index: 1;
     overflow: auto;
@@ -171,40 +176,102 @@ h1{
     top: 0;
     width: 100%;
     height: 100%;
+
 }
 .contenido-modal-buscador{
-    font-family: 'Quicksand', sans-serif;
     position: relative;
     background: #cf1111;
     margin: auto;
-    width: 200px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
     border-radius: 20px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.438);
+    border: 2px solid;
     animation-name: modal;
     animation-duration: 1s;
 }
 .imagenPoke{
     display: flex;
     width: 150px;
-    margin-left: 25px;
+    margin: 50px;
+    margin-top: 0px;
     flex-wrap: wrap; 
     flex-direction: row;
     background-color: white;
+    border:2px solid;
     border-radius: 10px;
-
+}
+#imgPoke{
+    margin-left: 20px;
+}
+#circle{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 7px;
+    background-color: rgb(0, 255, 200);
+    border: 3px double;
+    border-radius: 50%;
+}
+#cruz{
+    position: fixed;
+    margin-top: 200px;
+    margin-left: -50px;    
+    width: 75px;
+    height: 50px;
+    z-index: 1;
+}
+.contorno{
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    width: 220px;
+    height: 160px;
+    margin: 15px;
+    margin-top: -40px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: fixed;
+}
+#name{
+    position: fixed;
+    background-color: rgb(78, 102, 65);
+    width: 150px;
+    height: 20px;
+    margin-top: -35px;
+    margin-left: 70px;
+    border-radius: 30px;
+    border: 1px solid;
+}
+#namePoke{
+margin: 40px;
 }
 .info{
+    font-family: 'VT323', monospace;
+    font-size: 17px;
+    position: fixed;
+    width: 155px;
     text-align: center;
-    margin-top: ;
-}
+    margin: 65px;
+    margin-top: -10px;
+    background-color: rgb(78, 102, 65);
+    border: 4px double;
+    display: inline-block;
+    word-wrap: break-word;
 
-.closePoke{
-    color: rgb(0, 0, 0);
-    font-size: 20px;
+ 
+}
+span{
+    font-size: 15px;
     font-weight: bold;
 }
-.closePoke:hover{
+
+.closeBuscador{
+    color: rgb(0, 0, 0);
+    margin: 9px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.closeBuscador:hover{
     color: rgb(160, 0, 0);
     text-decoration: none;
     cursor: pointer;
@@ -239,15 +306,22 @@ h1{
     }
     .inicio{
         flex-direction: column;
+        float: none;
     }
     .claseTarjeta{
         flex-direction: column;
+        float: none;
     }
     .desplegable{
     flex-direction: column;
+    float: none;
+
     }
     .buscador{
         flex-direction: column;
+    }
+    .modalBuscador{
+        float: none;
     }
   
   }

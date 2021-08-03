@@ -2,9 +2,11 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +23,16 @@
 
   <main>
 
-    <div class="search">
+    <nav class="navegacion">
+      <div class="buscador">
+      <i id="icono" class="fa fa-search"></i>
       <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
-      <button id="btnSearch">BUSCAR</button>
     </div>
+      <!--<button id="btnSearch">BUSCAR</button>-->
+    
+  
+
+    <button id="botonNuevaBusqueda">Nueva busqueda</button>
 
     <div id="menu">
       <select name="" id="menuDesplegable">
@@ -49,9 +57,8 @@
         <option value="dragon">Dragón</option>
       </select>
 
-      <button id="botonNuevaBusqueda">Nueva busqueda</button>
 
-    </div>
+    </nav>
 
 
     <!--MODAL-->
@@ -81,13 +88,26 @@
     <div id="modalPoke" class="modalBuscador">
       <div id="flexPoke" class="flexBuscador">
         <div class="contenido-modal-buscador">
+          <div id="circle">
           <span class="closeBuscador" id="closePoke">&times;</span>
-          <section class="imagenPoke"><img id="imgPoke"></section>
-          <section class="info">
+        </div>
+          <section class="imagenPoke">
+            <img id="imgPoke">
+            <img id="cruz" src="https://i.ibb.co/C554FCT/png-clipart-d-pad-nintendo-ds-xbox-one-controller-nintendo-3ds-nintendo-angle-rectangle.png">
+          </section> 
+          <div class="contorno">         
+        </div>
+       <div id="name">
+        <span id="namePoke">POKEMON NAME</span>
+       </div>
+          <div class="info">
+            <span>TIPO:</span>
           <p id="tipo"></p>
+          <span>RESISTENCIA: </span>
           <p id="resistencia"></p>
+          <span>DEBILIDAD:</span>
           <p id="debilidad"></p>
-        </section>
+      </div>
         </div>
       </div>
     </div>
