@@ -6,49 +6,39 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <div class="banner">
-      <!-- <img class="logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pok%C3%A9mon_GO_logo.svg/1280px-Pok%C3%A9mon_GO_logo.svg.png">
-   -->
+      <img class="logo" src="pokedex.png">
     </div>
-
-
 
   </header>
 
   <main>
 
     <nav class="navegacion">
-      <div class="buscador">
-      <i id="icono" class="fa fa-search"></i>
-      <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
-    </div>
-      <!--<button id="btnSearch">BUSCAR</button>-->
-    
-  
+      <div>
+        <div class="searchIcon">
+          <img id="searchIcon" src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" />
+        </div>
+        <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
+      </div>
+      <button id="botonNuevaBusqueda">Nueva busqueda</button>
 
-    <button id="botonNuevaBusqueda">Nueva busqueda</button>
-
-    <div id="menu">
-      <select name="" id="menuDesplegable">
+      <select id="menuDesplegable">
         <option disabled selected>Selecciona una opción</option>
         <option value="electric">Electrico</option>
         <option value="grass">Planta</option>
         <option value="poison">Veneno</option>
         <option value="fire">Fuego</option>
-        <option value="flying">Volador</option>
         <option value="bug">Bicho</option>
         <option value="normal">Normal</option>
         <option value="fighting">Lucha</option>
         <option value="psychic">Psiquico</option>
         <option value="rock">Roca</option>
         <option value="ground">Tierra</option>
-        <option value="ice">Hielo</option>
         <option value="rock">Roca</option>
         <option value="water">Agua</option>
         <option value="fairy">Hada</option>
@@ -56,58 +46,47 @@
         <option value="ghost">Fantasma</option>
         <option value="dragon">Dragón</option>
       </select>
-
-
     </nav>
 
-
-    <!--MODAL-->
-
-    <div id="miModal" class="modal">
-      <div class="flex" id="flex">
-        <div class="contenido-modal">
-          <span class="close" id="close">&times;</span>
-          <h1>ACERCA DE:</h1>
-          <p id="informacion"></p>
-        </div>
-      </div>
-    </div>
-
-
     <!--POKEMONES EN PANTALLA-->
-
 
     <section id="pokeInicio" class="inicio">
 
     </section>
 
     <!--RESULTADOS BUSCADOR-->
-    <!-- <section id="pokeBuscador" class="buscador">
-    </section>-->
 
     <div id="modalPoke" class="modalBuscador">
       <div id="flexPoke" class="flexBuscador">
         <div class="contenido-modal-buscador">
           <div id="circle">
-          <span class="closeBuscador" id="closePoke">&times;</span>
-        </div>
-          <section class="imagenPoke">
+            <span class="closeBuscador" id="closePoke">&times;</span>
+          </div>
+          <div class="imagenPoke">
             <img id="imgPoke">
-            <img id="cruz" src="https://i.ibb.co/C554FCT/png-clipart-d-pad-nintendo-ds-xbox-one-controller-nintendo-3ds-nintendo-angle-rectangle.png">
-          </section> 
-          <div class="contorno">         
-        </div>
-       <div id="name">
-        <span id="namePoke">POKEMON NAME</span>
-       </div>
+          </div>
+          <div id="fondoImagen"></div>
+          <img id="pokeball" src="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png">
+
+          <img id="cruz"
+            src="https://i.ibb.co/C554FCT/png-clipart-d-pad-nintendo-ds-xbox-one-controller-nintendo-3ds-nintendo-angle-rectangle.png">
+
+          <div class="contorno">
+          </div>
+          <div id="name">
+            <span id="namePoke">POKEMON NAME</span>
+          </div>
           <div class="info">
-            <span>TIPO:</span>
-          <p id="tipo"></p>
-          <span>RESISTENCIA: </span>
-          <p id="resistencia"></p>
-          <span>DEBILIDAD:</span>
-          <p id="debilidad"></p>
-      </div>
+            <span id="about"></span>
+            <section id="caracateristicas">
+              <span>TIPO:</span>
+              <p id="tipo"></p>
+              <span>RESISTENCIA: </span>
+              <p id="resistencia"></p>
+              <span>DEBILIDAD:</span>
+              <p id="debilidad"></p>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -117,7 +96,11 @@
 
     </section>
 
-
+    <footer>
+      <img id="footerImg" src="Footer.png">
+      <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a>
+      <p>
+    </footer>
 
 
   </main>
