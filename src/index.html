@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
@@ -11,22 +12,23 @@
 <body>
   <header>
     <div class="banner">
-    <img class="logo"src="pokedex.png">
+      <img class="logo" src="pokedex.png">
     </div>
-
-
 
   </header>
 
   <main>
 
-    <div class="search">
-      <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
-      <button id="btnSearch">BUSCAR</button>
-    </div>
+    <nav class="navegacion">
+      <div>
+        <div class="searchIcon">
+          <img id="searchIcon" src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" />
+        </div>
+        <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
+      </div>
+      <button id="botonNuevaBusqueda">Nueva busqueda</button>
 
-    <div id="menu">
-      <select name="" id="menuDesplegable">
+      <select id="menuDesplegable">
         <option disabled selected>Selecciona una opción</option>
         <option value="electric">Electrico</option>
         <option value="grass">Planta</option>
@@ -45,12 +47,9 @@
         <option value="ghost">Fantasma</option>
         <option value="dragon">Dragón</option>
       </select>
+    </nav>
 
-      <button id="botonNuevaBusqueda">Nueva busqueda</button>
-
-    </div>
-
-
+    <!--POKEMONES EN PANTALLA-->
     <!--MODAL-->
 
     <div id="miModal" class="modal">
@@ -67,24 +66,45 @@
     <!--POKEMONES EN PANTALLA-->
 
 
+
     <section id="pokeInicio" class="inicio">
 
     </section>
 
     <!--RESULTADOS BUSCADOR-->
-    <!-- <section id="pokeBuscador" class="buscador">
-    </section>-->
+
 
     <div id="modalPoke" class="modalBuscador">
-      <div id="flexPoke" class="flexBuscador">
+      <div class="fondo">
         <div class="contenido-modal-buscador">
-          <span class="closeBuscador" id="closePoke">&times;</span>
-          <section class="imagenPoke"><img id="imgPoke"></section>
-          <section class="info">
-          <p id="tipo"></p>
-          <p id="resistencia"></p>
-          <p id="debilidad"></p>
-        </section>
+          <div id="circle">
+            <span class="closeBuscador" id="closePoke">&times;</span>
+          </div>
+          <div class="imagenPoke">
+            <img id="imgPoke">
+          </div>
+          <div id="fondoImagen"></div>
+          <img id="pokeball" src="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png">
+
+          <img id="cruz"
+            src="https://i.ibb.co/C554FCT/png-clipart-d-pad-nintendo-ds-xbox-one-controller-nintendo-3ds-nintendo-angle-rectangle.png">
+
+          <div class="contorno">
+          </div>
+          <div id="name">
+            <span id="namePoke">POKEMON NAME</span>
+          </div>
+          <div class="info">
+            <span id="about"></span>
+            <section id="caracateristicas">
+              <span>TIPO:</span>
+              <p id="tipo"></p>
+              <span>RESISTENCIA: </span>
+              <p id="resistencia"></p>
+              <span>DEBILIDAD:</span>
+              <p id="debilidad"></p>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -94,10 +114,11 @@
 
     </section>
 
-<footer>
-  <img id="footerImg" src="Footer.png">
-  <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a><p>
-</footer>
+    <footer>
+      <img id="footerImg" src="Footer.png">
+      <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a>
+      <p>
+    </footer>
 
 
   </main>
