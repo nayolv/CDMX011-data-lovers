@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=VT323&display=swap');
 
 *{
@@ -160,11 +159,13 @@ footer{
 }
 
 
-/*MODAL BUSCADOR*/
-.flexBuscador{
+/*MODAL POKEDEX*/
+.fondo{
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(5px);
 }
 
 .modalBuscador{
@@ -183,8 +184,8 @@ footer{
     position: relative;
     background: #cf1111;
     margin: auto;
-    width: 270px;
-    height: 470px;
+    width: 300px;
+    height: 500px;
     border-radius: 20px;
     border: 2px solid;
     animation-name: modal;
@@ -199,11 +200,11 @@ footer{
 
 }
 #fondoImagen{
-    width: 250px;
+    width: 290px;
     height: 200px;
     position: fixed;
     margin-top: 10px;
-    margin: 8px;    
+    margin: 3px;    
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
@@ -213,7 +214,7 @@ footer{
     height: 40px;
     width: 40px;
     margin-top: -40px;
-    margin-left: 225px;
+    margin-left: 250px;
 }
 #circle{
     width: 35px;
@@ -228,7 +229,7 @@ footer{
     position: fixed;
     z-index: 1;
     margin-top: 290px;
-    margin-left: -5px;    
+    margin-left: -10px;    
     width: 80px;
     height: 50px;
     
@@ -237,9 +238,9 @@ footer{
     display: flex;
     flex-direction: row;
     background-color: gray;
-    width: 255px;
-    height: 190px;
-    margin: 5px;
+    width: 290px;
+    height: 225px;
+    margin: 3px;
     margin-top: 215px;
     border: 2px solid;
     border-radius: 10px;
@@ -248,9 +249,9 @@ footer{
 #name{
     position: fixed;
     background-color: rgb(105, 172, 70);
-    width: 150px;
+    width: 200px;
     height: 20px;
-    margin-top: 220px;
+    margin-top: 218px;
     margin-left: 80px;
     border-radius: 30px;
     border: 2px solid;
@@ -258,24 +259,28 @@ footer{
 #namePoke{
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace; 
+    font-weight: bolder;   
+
 }
 .info{
     position: fixed;    
-    font-family: 'VT323', monospace;
-    font-size: 20px;
-    width: 190px;
-    text-align: justify;
-    margin: 60px;
+    font-family: 'IBM Plex Mono', monospace;    
+    width: 230px;
+    text-align: center;
+    margin: 55px;
     margin-top: 245px;
     background-color: rgb(105, 172, 70);
     border: 5px double;
     word-wrap: break-word;
-
+    text-transform: capitalize;   
+    font-weight: bold;
  
 }
+
 span{
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 13px;
 }
 
 .closeBuscador{
@@ -293,8 +298,6 @@ span{
 .modalBuscador-body{
     padding: 20px 16px;
 }
-
-
 
 
 
