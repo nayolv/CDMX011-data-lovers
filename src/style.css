@@ -9,9 +9,9 @@
 }
 body{
     background-color: #DBFDB9;
-    /*background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png);
-    background-size: 50px;
-    opacity: 0.5;*/
+    background-image: url(https://i.ibb.co/3kcVsSJ/Be-Funky-design.jpg);
+    background-size: cover;
+ 
 }
 
 .banner {
@@ -157,7 +157,7 @@ img{
     flex-wrap: wrap; 
     justify-content: center;
     text-align: center;
-    background: rgba(67, 82, 61, 0.507);
+    background: #9db684d8;
 }
   #footerImg{
     width: 20%;
@@ -200,6 +200,8 @@ img{
     border: 2px solid;
     animation-name: modal;
     animation-duration: 1s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+
 }
 .imagenPoke{
     z-index: 1;
@@ -225,6 +227,7 @@ img{
     width: 40px;
     margin-top: -40px;
     margin-left: 250px;
+    filter: none;
 }
 #circle{
     width: 35px;
@@ -242,7 +245,8 @@ img{
     margin-left: -10px;    
     width: 80px;
     height: 50px;
-    
+    filter: none;
+
 }
 .contorno{
     display: flex;
@@ -341,3 +345,4 @@ span{
 
     }
   }
+
