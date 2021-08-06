@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -26,10 +25,11 @@
         </div>
         <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
       </div>
-      <button id="botonNuevaBusqueda">Nueva busqueda</button>
+     <button id="botonNuevaBusqueda">Nueva busqueda</button>
+      <!-- <img id="botonNuevaBusqueda" src="flecha.png">-->
 
       <select id="menuDesplegable">
-        <option disabled selected>Selecciona una opción</option>
+        <option disabled selected>Selecciona un tipo</option>
         <option value="electric">Electrico</option>
         <option value="grass">Planta</option>
         <option value="poison">Veneno</option>
@@ -50,29 +50,17 @@
     </nav>
 
     <!--POKEMONES EN PANTALLA-->
-    <!--MODAL-->
-
-    <div id="miModal" class="modal">
-      <div class="flex" id="flex">
-        <div class="contenido-modal">
-          <span class="close" id="close">&times;</span>
-          <h1>ACERCA DE:</h1>
-          <p id="informacion"></p>
-        </div>
-      </div>
-    </div>
-
-
-    <!--POKEMONES EN PANTALLA-->
-
-
 
     <section id="pokeInicio" class="inicio">
 
     </section>
+  
+
+
+
+
 
     <!--RESULTADOS BUSCADOR-->
-
 
     <div id="modalPoke" class="modalBuscador">
       <div class="fondo">
@@ -114,13 +102,16 @@
 
     </section>
 
-    <footer>
+    <footer class="footer">
+
       <img id="footerImg" src="Footer.png">
       <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a>
-      <p>
+      </p>
+
     </footer>
 
 
   </main>
   <script src="main.js" type="module"></script>
 </body>
+</html>

@@ -1,12 +1,12 @@
-import { example, anotherExample } from '../src/data.js';
+import { datitos } from '../src/data.js';
 
 
-describe('example', () => {
+describe('pokeFiltroNameNum', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof datitos.pokeFiltroNameNum).toBe('function');
   });
 
-  it('returns `example`', () => {
+  it('deberia retornar `001`', () => {
     expect(example()).toBe('example');
   });
 });
