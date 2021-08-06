@@ -1,18 +1,18 @@
-import { example, anotherExample } from '../src/data.js';
+import { buscadorInicial } from '../src/data.js';
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('buscadorInicial', () => {
+  it('Debería ser funcion', () => {
+    expect(typeof buscadorInicial).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('Debería retornar true para PIKACHU', () => {
+    expect(buscadorInicial.searchUser("PIKACHU")).toBe(true);
   });
 });
 
 
-describe('anotherExample', () => {
+/*describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -20,4 +20,5 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+
+});*/

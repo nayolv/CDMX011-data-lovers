@@ -5,32 +5,40 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 body{
-    background-image: url(https://i.ibb.co/kQYjxs9/Be-Funky-design.jpg);
+    background-color: #DBFDB9;
+    background-image: url(https://i.ibb.co/3kcVsSJ/Be-Funky-design.jpg);
     background-size: cover;
+ 
 }
 
 .banner {
+    display: flex;
     overflow: hidden;
     background-image: url(/banner.jpg);
     padding: 20px 10px;
     height: 120px; 
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; 
+
   }
   .logo{
-    
     width: 360px;
     height: 130px;
     background-color: transparent;
-    right: 900%;
 }
 
   
  .navegacion {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;      
-
+    justify-content: flex-end;
+    margin: 20px;   
+    align-items: center;
+    flex-wrap: wrap; 
   }
  
   .searchIcon{
@@ -62,17 +70,18 @@ body{
 }
 #botonNuevaBusqueda{
     margin-right: 20px;
-    margin: 6px;
-    width: 150px;
-    height: 50px;
+    margin: 10px;
+    width: 60px;
+    height: 40px;
     font-family: 'Alegreya Sans SC', sans-serif;
     text-align: center;
-    border: 1px solid rgb(212, 154, 68);
     border-radius: 10px;
+    border: 1px solid rgb(212, 154, 68);
     background: rgb(241, 243, 130);
+
 }
 #botonNuevaBusqueda:hover{
-    background-color: rgb(212, 154, 68);
+    background: rgb(212, 154, 68);
     transform: scale(1.1);
 }
 
@@ -115,6 +124,7 @@ body{
     border:1px solid #f7a15170;
     font-family: 'Oswald', sans-serif;    
     text-transform: capitalize;
+    line-height: 20px;
     flex-direction: row;
     cursor: pointer;
     box-shadow: 30px 30px 30px rgba(100, 100, 100, 0.5);
@@ -127,7 +137,7 @@ body{
 .desplegable{
 display: flex;
 justify-content: center;
-margin: 100px;
+margin: 50px;
 margin-top: 10px;
 flex-wrap: wrap; 
 flex-direction: row;
@@ -136,17 +146,18 @@ text-align: center;
 
 }
 
-#prueba{
-    background-color: tomato;
-    width: 300px;
-    height: 400px;
-    border-radius: 30px;
+img{
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.7));
 }
 
-footer{
+.footer{
     display:flex;
-    flex-direction: column ;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    text-align: center;
+    background: #9db684d8;
 }
   #footerImg{
     width: 20%;
@@ -157,7 +168,6 @@ footer{
     font-family: 'Oswald', sans-serif;    
 
 }
-
 
 /*MODAL POKEDEX*/
 .fondo{
@@ -190,6 +200,8 @@ footer{
     border: 2px solid;
     animation-name: modal;
     animation-duration: 1s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+
 }
 .imagenPoke{
     z-index: 1;
@@ -215,6 +227,7 @@ footer{
     width: 40px;
     margin-top: -40px;
     margin-left: 250px;
+    filter: none;
 }
 #circle{
     width: 35px;
@@ -232,7 +245,8 @@ footer{
     margin-left: -10px;    
     width: 80px;
     height: 50px;
-    
+    filter: none;
+
 }
 .contorno{
     display: flex;
@@ -267,9 +281,9 @@ footer{
 .info{
     position: fixed;    
     font-family: 'IBM Plex Mono', monospace;    
-    width: 230px;
+    width: 235px;
     text-align: center;
-    margin: 55px;
+    margin: 50px;
     margin-top: 245px;
     background-color: rgb(105, 172, 70);
     border: 5px double;
@@ -313,12 +327,21 @@ span{
         flex-direction: column;
     }
     .desplegable{
-    flex-direction: column;
+         flex-direction: column;
     }
     .navegacion{
         flex-direction: column;
+       
     }
     .containerSearch{
         flex-direction: column;
+    }
+    .banner {
+        flex-direction: column;
+
+    }
+    .footer{
+        flex-direction: column;
+
     }
   }
