@@ -1,37 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=VT323&display=swap');
 
 *{
     margin: 0;
     padding: 0;
+
+
 }
 body{
-    background-image: url(https://i.ibb.co/kQYjxs9/Be-Funky-design.jpg);
+    background-color: #DBFDB9;
+    background-image: url(https://i.ibb.co/3kcVsSJ/Be-Funky-design.jpg);
     background-size: cover;
+ 
 }
 
 .banner {
+    display: flex;
     overflow: hidden;
     background-image: url(/banner.jpg);
     padding: 20px 10px;
     height: 120px; 
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; 
+
   }
   .logo{
-    
     width: 360px;
     height: 130px;
     background-color: transparent;
-    right: 900%;
 }
 
   
  .navegacion {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;      
-
+    justify-content: flex-end;
+    margin: 20px;   
+    align-items: center;
+    flex-wrap: wrap; 
   }
  
   .searchIcon{
@@ -63,17 +71,18 @@ body{
 }
 #botonNuevaBusqueda{
     margin-right: 20px;
-    margin: 6px;
-    width: 150px;
-    height: 50px;
+    margin: 10px;
+    width: 60px;
+    height: 40px;
     font-family: 'Alegreya Sans SC', sans-serif;
     text-align: center;
-    border: 1px solid rgb(212, 154, 68);
     border-radius: 10px;
+    border: 1px solid rgb(212, 154, 68);
     background: rgb(241, 243, 130);
+
 }
 #botonNuevaBusqueda:hover{
-    background-color: rgb(212, 154, 68);
+    background: rgb(212, 154, 68);
     transform: scale(1.1);
 }
 
@@ -99,76 +108,7 @@ body{
 .inicio{
     margin: 50px;
     margin-top: 0px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; 
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-   
-}
-.claseTarjeta{
-    margin: 20px;
-    padding: 30px;
-    background-color: rgb(255, 255, 255);
-    width: 120px;
-    border-radius: 20px;
-    border:1px solid #f7a15170;
-    font-family: 'Oswald', sans-serif;    
-    text-transform: capitalize;
-    flex-direction: row;
-    cursor: pointer;
-    box-shadow: 30px 30px 30px rgba(100, 100, 100, 0.5);
-}
-.claseTarjeta:hover{
-    background-color: #f7a151;
-    transform: scale(1.2);
-}
-
-.desplegable{
-display: flex;
-justify-content: center;
-margin: 100px;
-margin-top: 10px;
-flex-wrap: wrap; 
-flex-direction: row;
-cursor: pointer;
-text-align: center;
-
-}
-
-#prueba{
-    background-color: tomato;
-    width: 300px;
-    height: 400px;
-    border-radius: 30px;
-}
-
-footer{
-    display:flex;
-    flex-direction: column ;
-    align-items: center;
-}
-  #footerImg{
-    width: 20%;
-  }
-
-  #masInformacion{
-    font-size: 25px;
-    font-family: 'Oswald', sans-serif;    
-
-}
-
-
-/*MODAL POKEDEX*/
-.fondo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.404);
-    backdrop-filter: blur(5px);
-}
-
+=======
 .modalBuscador{
     display: none;
     flex-direction: row;
@@ -323,8 +263,7 @@ span{
         flex-direction: column;
     }
   }
-=======
-.inicio{
+
     display: flex;
     align-items: center;
     flex-wrap: wrap; 
@@ -334,18 +273,40 @@ span{
    
 }
 .claseTarjeta{
-    margin: 10px;
+    margin: 20px;
+    padding: 30px;
     background-color: rgb(255, 255, 255);
-    width: 200px;
+    width: 120px;
     border-radius: 20px;
-    font-family: 'Quicksand', sans-serif;
+    border:1px solid #f7a15170;
+    font-family: 'Oswald', sans-serif;    
     text-transform: capitalize;
+    line-height: 20px;
     flex-direction: row;
     cursor: pointer;
+    box-shadow: 30px 30px 30px rgba(100, 100, 100, 0.5);
+}
+.claseTarjeta:hover{
+    background-color: #f7a151;
+    transform: scale(1.2);
+
 }
 
 .desplegable{
 display: flex;
+justify-content: center;
+margin: 50px;
+margin-top: 10px;
+flex-wrap: wrap; 
+flex-direction: row;
+cursor: pointer;
+text-align: center;
+
+}
+
+img{
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.7));
+
 flex-wrap: wrap; 
 flex-direction: row;
 text-align: center;
@@ -455,6 +416,7 @@ h1{
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.438);
     animation-name: modal;
     animation-duration: 1s;
+
 }
 .imagenPoke{
     display: flex;
@@ -465,18 +427,160 @@ h1{
     background-color: white;
     border-radius: 10px;
 
-}
-.info{
+.footer{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
     text-align: center;
+    background: #9db684d8;
+}
+  #footerImg{
+    width: 20%;
+  }
+
+  #masInformacion{
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;    
+
 }
 
-.closePoke{
+/*MODAL POKEDEX*/
+.fondo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(5px);
+}
+
+.modalBuscador{
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.contenido-modal-buscador{
+    position: relative;
+    background: #cf1111;
+    margin: auto;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    border: 2px solid;
+    animation-name: modal;
+    animation-duration: 1s;
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.5);
+
+}
+.imagenPoke{
+    z-index: 1;
+    position: absolute;
+    margin-top: 50px;
+    background-color: transparent;
+    margin-left: 30%;
+}
+#fondoImagen{
+    width: 290px;
+    height: 200px;
+    position: fixed;
+    margin-top: 10px;
+    margin: 3px;    
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#pokeball{
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    margin-top: -40px;
+    margin-left: 250px;
+    filter: none;
+}
+#circle{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 7px;
+    background-color: rgb(0, 255, 200);
+    border: 5px double;
+    border-radius: 50%;
+}
+#cruz{
+    position: fixed;
+    z-index: 1;
+    margin-top: 290px;
+    margin-left: -10px;    
+    width: 80px;
+    height: 50px;
+    filter: none;
+
+}
+.contorno{
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    width: 290px;
+    height: 225px;
+    margin: 3px;
+    margin-top: 215px;
+    border: 2px solid;
+    border-radius: 10px;
+    position: fixed;
+}
+#name{
+    position: fixed;
+    background-color: rgb(105, 172, 70);
+    width: 200px;
+    height: 20px;
+    margin-top: 218px;
+    margin-left: 80px;
+    border-radius: 30px;
+    border: 2px solid;
+}
+#namePoke{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace; 
+    font-weight: bolder;   
+
+}
+.info{
+    position: fixed;    
+    font-family: 'IBM Plex Mono', monospace;    
+    width: 235px;
+    text-align: center;
+    margin: 50px;
+    margin-top: 245px;
+    background-color: rgb(105, 172, 70);
+    border: 5px double;
+    word-wrap: break-word;
+    text-transform: capitalize;   
+    font-weight: bold;
+ 
+}
+
+span{
+    font-size: 13px;
+}
+
+.closeBuscador{
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    margin: 9px;
+    font-size: 30px;
     font-weight: bold;
 }
-.closePoke:hover{
-    color: rgb(160, 0, 0);
+.closeBuscador:hover{
+    color: rgb(255, 14, 14);
     text-decoration: none;
     cursor: pointer;
 }
@@ -487,10 +591,6 @@ h1{
 
 
 
-
-
-
-
 @keyframes modal{
     from{top: -330px; opacity: 0;}
     to{top:0; opacity: 1;}
@@ -498,40 +598,25 @@ h1{
 }
 
 @media screen and (max-width: 500px) {
-    .logo{
-        float: none;
-    }
-
-    .search {
-      float: none;
-    }
-    .modal{
-        float: none;
-    }
+  
     .inicio{
         flex-direction: column;
     }
-    .claseTarjeta{
-        flex-direction: column;
-    }
     .desplegable{
-    flex-direction: column;
+         flex-direction: column;
     }
-    .buscador{
+    .navegacion{
+        flex-direction: column;
+       
+    }
+    .containerSearch{
         flex-direction: column;
     }
-  
-  }
+    .banner {
+        flex-direction: column;
 
-footer{
-    display:flex;
-    flex-direction: column ;
-    align-items: center;
-}
-  #footerImg{
-    width: 20%;
-  }
+    }
+    .footer{
+        flex-direction: column;
 
-  #masInformacion{
-    font-size: 25px;
-}
+    }
