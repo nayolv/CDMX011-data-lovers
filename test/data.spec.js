@@ -1,14 +1,35 @@
-import { buscadorInicial } from '../src/data.js';
+import { datitos } from '../src/data.js';
+describe('datitos', () => {
+  it('Debería ser un objeto', () => {
+    expect(typeof datitos).toBe('object');
+  });
+  });
+  
+  describe('datitos.pokeFiltroNameNum', () => {
+    it('Debería ser una función', () => {
+      expect(typeof datitos.pokeFiltroNameNum).toBe("function");
+  });
+  });
+  it('Debería ser definida', () => {
+    expect(datitos.pokeFiltroNameNum).toBeDefined();
+  });
+  it('No debe ser null', () => {
+    expect(datitos.pokeFiltroNameNum).not.toBeNull();
+  });
+  
 
-
-describe('buscadorInicial', () => {
-  it('Debería ser funcion', () => {
-    expect(typeof buscadorInicial).toBe('function');
+describe('datitos.pokeError', () => {
+  it('debería ser una funcion', () => {
+    expect(typeof datitos.pokeError).toBe('function');
   });
 
-  it('Debería retornar true para PIKACHU', () => {
-    expect(buscadorInicial.searchUser("PIKACHU")).toBe(true);
-  });
+it('debería retornar false para "pikachuy"', () => {
+  expect(datitos.pokeError('pikachuy')).toBe(false);
+});
+
+it('debería retornar true para "pikachu"', () => {
+  expect(datitos.pokeError('pikachu')).toBe(false);
+});
 });
 
 
