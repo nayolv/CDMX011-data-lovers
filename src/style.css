@@ -78,13 +78,11 @@ body{
     border-radius: 10px;
     border: 1px solid rgb(212, 154, 68);
     background: rgb(241, 243, 130);
-
 }
 #botonNuevaBusqueda:hover{
     background: rgb(212, 154, 68);
     transform: scale(1.1);
 }
-
 #menuDesplegable{
     text-align-last: center;
     margin-right: 20px;
@@ -97,13 +95,40 @@ body{
     outline: none;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 20px;
-    
-  
 }
 #menuDesplegable:hover{
     background: rgb(212, 154, 68);
 }
-
+#descendente{
+    margin-right: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 90px;
+    height: 40px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 154, 68);
+    background: rgb(241, 243, 130);
+}
+#descendente:hover{
+    background: rgb(212, 154, 68);
+}
+#volver{
+    margin-right: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 90px;
+    height: 40px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 154, 68);
+    background: rgb(241, 243, 130);   
+}
+#volver:hover{
+    background: rgb(212, 154, 68);
+}
 .inicio{
     margin: 50px;
     margin-top: 0px;
@@ -143,13 +168,10 @@ flex-wrap: wrap;
 flex-direction: row;
 cursor: pointer;
 text-align: center;
-
 }
-
 img{
     filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.7));
 }
-
 .footer{
     display:flex;
     align-items: center;
@@ -162,11 +184,9 @@ img{
   #footerImg{
     width: 20%;
   }
-
   #masInformacion{
     font-size: 25px;
     font-family: 'Oswald', sans-serif;    
-
 }
 
 /*MODAL POKEDEX*/
@@ -177,18 +197,15 @@ img{
     background-color: rgba(0, 0, 0, 0.404);
     backdrop-filter: blur(5px);
 }
-
 .modalBuscador{
     display: none;
     flex-direction: row;
     position: fixed;
     z-index: 1;
-    overflow: auto;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-
 }
 .contenido-modal-buscador{
     position: relative;

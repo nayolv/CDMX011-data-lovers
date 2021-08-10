@@ -13,21 +13,19 @@
     <div class="banner">
       <img class="logo" src="pokedex.png">
     </div>
-
   </header>
 
   <main>
-
     <nav class="navegacion">
+
+      <button id="descendente">ORDENAR 30-0</button>
+
       <div>
         <div class="searchIcon">
-          <img id="searchIcon" src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" alt="No hay"/>
+          <img id="searchIcon" src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" alt="No hay" />
         </div>
         <input id="buscador" type="text" placeholder="ingresa el nombre de tu pokemon">
       </div>
-     <button id="botonNuevaBusqueda">Regresar</button>
-      <!-- <img id="botonNuevaBusqueda" src="flecha.png">-->
-
       <select id="menuDesplegable">
         <option disabled selected>Selecciona un tipo</option>
         <option value="electric">Electrico</option>
@@ -40,28 +38,28 @@
         <option value="psychic">Psiquico</option>
         <option value="rock">Roca</option>
         <option value="ground">Tierra</option>
-        <option value="rock">Roca</option>
+        <option value="flying">Volador</option>
         <option value="water">Agua</option>
         <option value="fairy">Hada</option>
         <option value="dark">Siniestro</option>
         <option value="ghost">Fantasma</option>
         <option value="dragon">Dragón</option>
+        <option value="ice">Hielo</option>
       </select>
+      <button id="botonNuevaBusqueda">Regresar</button>
+
     </nav>
 
     <!--POKEMONES EN PANTALLA-->
+   
+
 
     <section id="pokeInicio" class="inicio">
-
     </section>
-  
-
-
-
-
+    <section id="pokeInicio2" class="inicio">
+    </section>
 
     <!--RESULTADOS BUSCADOR-->
-
     <div id="modalPoke" class="modalBuscador">
       <div class="fondo">
         <div class="contenido-modal-buscador">
@@ -73,10 +71,8 @@
           </div>
           <div id="fondoImagen"></div>
           <img id="pokeball" src="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png">
-
           <img id="cruz"
             src="https://i.ibb.co/C554FCT/png-clipart-d-pad-nintendo-ds-xbox-one-controller-nintendo-3ds-nintendo-angle-rectangle.png">
-
           <div class="contorno">
           </div>
           <div id="name">
@@ -99,19 +95,16 @@
 
     <!--MENU DESPLEGABLE-->
     <section id="pokeDesplegable" class="desplegable">
-
     </section>
-
-    <footer class="footer">
-
-      <img id="footerImg" src="Footer.png">
-      <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a>
-      </p>
-
-    </footer>
-
-
   </main>
+
+  <footer class="footer">
+    <img id="footerImg" src="Footer.png">
+    <p id="masInformacion">Para conocer más visita <a href="https://www.pokemon.com/es/">Pokemon.es</a>
+    </p>
+  </footer>
+
   <script src="main.js" type="module"></script>
 </body>
+
 </html>
