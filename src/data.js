@@ -1,57 +1,54 @@
 const datitos = {
   infoFiltrada: function (dataImportada,searchUser){
-    return  dataImportada.filter(poke => poke.name == searchUser);
+    return  dataImportada.filter(poke => searchUser==poke.name);
   },
    
-  mapeandoData: function(buscadorFuncional){
-    return buscadorFuncional.map(pokenombre => pokenombre.name);
+  mapeandoData: function(dataFiltrada){
+    return dataFiltrada.map(pokenombre => pokenombre.name);
   },
 
   pokeError(pokeData, searchUser) {
-    if (searchUser == pokeData) {
-      return true
-    } else {
+    if (searchUser != pokeData || searchUser == "") {
       return false
     }
   },
-
-  pokeFiltroNameNum: function (buscadorFuncional) {
+  pokeFiltroNameNum: function (dataFiltrada) {
     let resultadoNomNum = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoNomNum = "Nombre: " + item.name + " N°" + item.num;
 
     });
     return resultadoNomNum
   },
 
-  pokeFiltroImg: function (buscadorFuncional) {
+  pokeFiltroImg: function (dataFiltrada) {
     let resultadoImg = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoImg = item.img;
     });
     return resultadoImg
   },
 
-  pokeFiltroType: function (buscadorFuncional) {
+  pokeFiltroType: function (dataFiltrada) {
     let resultadoType = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoType = item.type;
     });
     return resultadoType
   },
 
-  pokeFiltroResist: function (buscadorFuncional) {
+  pokeFiltroResist: function (dataFiltrada) {
     let resultadoResist = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoResist = item.resistant;
     });
     return resultadoResist
   },
 
   
-  pokeFiltroDebil: function (buscadorFuncional) {
+  pokeFiltroDebil: function (dataFiltrada) {
     let resultadoDebil = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoDebil = item.weaknesses;
     });
     return resultadoDebil
@@ -59,7 +56,8 @@ const datitos = {
 
   recuperarSeleccionado: function(dataImportada, elementoSeleccionado) {
   
-    return dataImportada.filter(poke => poke.type == elementoSeleccionado);
+    return dataImportada.filter(poke =>  elementoSeleccionado== poke.type[0]|| elementoSeleccionado==poke.type[1]);
+    
     
     }
 };

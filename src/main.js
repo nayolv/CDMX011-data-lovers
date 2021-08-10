@@ -57,9 +57,9 @@ window.onload = function () {
 
 const clickBuscar = document.getElementById("searchIcon");
 document.getElementById("botonNuevaBusqueda").addEventListener("click", function () { location.reload() });
+
+
 //BUSCADOR    
-
-
 clickBuscar.addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
@@ -109,7 +109,6 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
   document.getElementById("botonNuevaBusqueda").style.display = "block";
   
   menuDesp.forEach(item => {
-
     const contenedorInicio = document.getElementById("pokeDesplegable");
     const contenedorImgyNombre = document.createElement("div");
     contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
