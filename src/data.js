@@ -1,10 +1,12 @@
 const datitos = {
-  infoFiltrada: function (dataImportada,searchUser){
-    return  dataImportada.filter(poke => searchUser==poke.name);
+  infoFiltrada: function (dataImportada, searchUser) {
+    const prueba1 = dataImportada.filter(poke => searchUser == poke.name);
+    return prueba1;
   },
-   
-  mapeandoData: function(dataFiltrada){
-    return dataFiltrada.map(pokenombre => pokenombre.name);
+
+  mapeandoData: function (dataFiltrada) {
+    const prueba = dataFiltrada.map(pokenombre => pokenombre.name);
+    return prueba;
   },
 
   pokeError(pokeData, searchUser) {
@@ -45,7 +47,7 @@ const datitos = {
     return resultadoResist
   },
 
-  
+
   pokeFiltroDebil: function (dataFiltrada) {
     let resultadoDebil = "";
     dataFiltrada.forEach(item => {
@@ -54,19 +56,51 @@ const datitos = {
     return resultadoDebil
   },
 
-  recuperarSeleccionado: function(dataImportada, elementoSeleccionado) {
+  recuperarSeleccionado: function (dataImportada, elementoSeleccionado) {
+
+    return dataImportada.filter(poke => elementoSeleccionado == poke.type[0] || elementoSeleccionado == poke.type[1]);
+
+
+  },
+
   
-    return dataImportada.filter(poke =>  elementoSeleccionado== poke.type[0]|| elementoSeleccionado==poke.type[1]);
+  //Organiza de la a a la z
+  az: function (dataImportada) {
     
-    
-    }
+    const az= dataImportada.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1
+      }
+      if (a > b) {
+        return 1
+      }
+      return 0
+    });
+    return az;
+  },
+  //Organiza de la z a la a
+
+  za: function (dataImportada) {
+  
+    const za= dataImportada.sort((a, b) => {
+      if (a.name < b.name) {
+        return 1
+      }
+      if (a.name > b.name) {
+        return -1
+      }
+      return 0
+    });
+    return za;
+  }
 };
 
+//Botones de organizacion de AZ y ZA
 
 
 
-  //recupera imagen y nombre del objeto
-   
+//recupera imagen y nombre del objeto
 
 
-export {datitos}
+
+export { datitos }
