@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=VT323&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Khand&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -35,17 +34,19 @@ body{
  .navegacion {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 20px;   
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap; 
-  }
+    border-bottom: 2px solid rgba(0, 0, 0, 0.164);
+    background: #9db68480;
+
+}
  
   .searchIcon{
       z-index: 1;
       position:absolute;
       margin-top: 18px;
-      margin-left: 230px;
+      margin-left: 235px;
       opacity: 0.5; 
   }
   .searchIcon:hover{
@@ -54,80 +55,75 @@ body{
 }
 
 #buscador{
-    width: 255px;
+    width: 260px;
     height: 40px;
     margin-top: 10px;
     border-radius: 15px;
-    border: 1px solid rgb(212, 154, 68);
-    background: rgb(241, 243, 130);
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
     outline: none;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 15px;
     text-align: center;
+    font-family: 'Khand', sans-serif;
 }
 #buscador:hover{
-    background: rgb(212, 154, 68);
+    background: rgb(230, 227, 109);
 }
+::placeholder {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: bold;
+  }
 #botonNuevaBusqueda{
     margin-right: 20px;
     margin: 10px;
-    width: 60px;
+    width: 90px;
     height: 40px;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Khand', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
     text-align: center;
     border-radius: 10px;
-    border: 1px solid rgb(212, 154, 68);
-    background: rgb(241, 243, 130);
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
 }
 #botonNuevaBusqueda:hover{
-    background: rgb(212, 154, 68);
+    background: rgb(230, 227, 109);
     transform: scale(1.1);
 }
 #menuDesplegable{
     text-align-last: center;
-    margin-right: 20px;
+    margin-right: 17px;
     margin: 6px;
     height: 50px;
     width: 250px;
-    background-color: rgb(241, 243, 130);
-    border: 1px solid rgb(212, 154, 68);
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
     border-radius: 15px;
     outline: none;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
+    font-family: 'Khand', sans-serif;    
+    font-size: 17px;
+    font-weight: bold;
 }
 #menuDesplegable:hover{
-    background: rgb(212, 154, 68);
+    background: rgb(230, 227, 109);
 }
 #descendente{
     margin-right: 20px;
     margin: 10px;
     margin-top: 20px;
-    width: 90px;
+    width: 150px;
     height: 40px;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Khand', sans-serif;
+    font-size: 17px;    
     text-align: center;
+    font-weight: bold;
     border-radius: 10px;
-    border: 1px solid rgb(212, 154, 68);
-    background: rgb(241, 243, 130);
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
 }
 #descendente:hover{
-    background: rgb(212, 154, 68);
-}
-#volver{
-    margin-right: 20px;
-    margin: 10px;
-    margin-top: 20px;
-    width: 90px;
-    height: 40px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgb(212, 154, 68);
-    background: rgb(241, 243, 130);   
-}
-#volver:hover{
-    background: rgb(212, 154, 68);
+    background: rgb(230, 227, 109);
+    transform: scale(1.1);
 }
 .inicio{
     margin: 50px;
@@ -147,9 +143,10 @@ body{
     width: 120px;
     border-radius: 20px;
     border:1px solid #f7a15170;
-    font-family: 'Oswald', sans-serif;    
+    font-family: 'Khand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     text-transform: capitalize;
-    line-height: 20px;
     flex-direction: row;
     cursor: pointer;
     box-shadow: 30px 30px 30px rgba(100, 100, 100, 0.5);
@@ -162,8 +159,9 @@ body{
 .desplegable{
 display: flex;
 justify-content: center;
-margin: 50px;
-margin-top: 10px;
+align-items: center;
+margin: 20px;
+margin-top: 40px;
 flex-wrap: wrap; 
 flex-direction: row;
 cursor: pointer;
@@ -171,6 +169,7 @@ text-align: center;
 }
 img{
     filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.7));
+    margin-bottom: 15px;
 }
 .footer{
     display:flex;
@@ -180,6 +179,7 @@ img{
     justify-content: center;
     text-align: center;
     background: #9db684d8;
+    border-top: 2px solid rgba(0, 0, 0, 0.164);
 }
   #footerImg{
     width: 20%;
@@ -281,14 +281,15 @@ img{
     position: fixed;
     background-color: rgb(105, 172, 70);
     width: 200px;
-    height: 20px;
-    margin-top: 218px;
+    height: 25px;
+    margin-top: 228px;
     margin-left: 80px;
     border-radius: 30px;
     border: 2px solid;
 }
 #namePoke{
     display: flex;
+    margin-top: 5px;
     justify-content: center;
     text-transform: uppercase;
     font-family: 'IBM Plex Mono', monospace; 
@@ -298,10 +299,10 @@ img{
 .info{
     position: fixed;    
     font-family: 'IBM Plex Mono', monospace;    
-    width: 235px;
+    width: 220px;
     text-align: center;
-    margin: 50px;
-    margin-top: 245px;
+    margin: 60px;
+    margin-top: 265px;
     background-color: rgb(105, 172, 70);
     border: 5px double;
     word-wrap: break-word;

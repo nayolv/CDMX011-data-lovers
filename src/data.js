@@ -1,16 +1,14 @@
 const datitos = {
-
-
   infoFiltrada: function (dataImportada,searchUser){
     return  dataImportada.filter(poke => poke.name == searchUser);
   },
    
-  mapeandoData: function(buscadorFuncional){
-    return buscadorFuncional.map(pokenombre => pokenombre.name);
+  mapeandoData: function(dataFiltrada){
+    return dataFiltrada.map(pokenombre => pokenombre.name);
   },
 
   pokeError(pokeData, searchUser) {
-    if (searchUser != pokeData) {
+    if (searchUser != pokeData || searchUser == "") {
       return false
     }
   },
@@ -25,50 +23,45 @@ const datitos = {
     return resultadoNomNum
   },
 
-  pokeFiltroImg: function (buscadorFuncional) {
+  pokeFiltroImg: function (dataFiltrada) {
     let resultadoImg = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoImg = item.img;
     });
     return resultadoImg
   },
 
-  pokeFiltroType: function (buscadorFuncional) {
+  pokeFiltroType: function (dataFiltrada) {
     let resultadoType = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoType = item.type;
     });
     return resultadoType
   },
 
-  pokeFiltroResist: function (buscadorFuncional) {
+  pokeFiltroResist: function (dataFiltrada) {
     let resultadoResist = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoResist = item.resistant;
     });
     return resultadoResist
   },
 
   
-  pokeFiltroDebil: function (buscadorFuncional) {
+  pokeFiltroDebil: function (dataFiltrada) {
     let resultadoDebil = "";
-    buscadorFuncional.forEach(item => {
+    dataFiltrada.forEach(item => {
       resultadoDebil = item.weaknesses;
     });
     return resultadoDebil
   },
-
+//MENU DESPLEGABLE
   recuperarSeleccionado: function(dataImportada, elementoSeleccionado) {
   
     return dataImportada.filter(poke => poke.type[0] == elementoSeleccionado||poke.type[1] == elementoSeleccionado);
     
     }
 };
-
-
-
-
-  //recupera imagen y nombre del objeto
    
 
 
