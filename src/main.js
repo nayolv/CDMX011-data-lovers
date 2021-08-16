@@ -43,21 +43,12 @@ const templateCard = (arrayData) => {
       tipoP.textContent = item.type;
       resistenciaP.textContent = item.resistant;
       debilidadP.textContent = item.weaknesses;
-<<<<<<< HEAD
 
       document.getElementById("closePoke").addEventListener("click", function () {
         document.getElementById("modalPoke").style.display = "none";
       });
     });
 
-=======
-
-      document.getElementById("closePoke").addEventListener("click", function () {
-        document.getElementById("modalPoke").style.display = "none";
-      });
-    });
-
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
 
   });
 
@@ -79,11 +70,7 @@ document.getElementById("za").addEventListener("click", function organizadorZa()
 
 
 //BUSCADOR POR NOMBRE
-<<<<<<< HEAD
 document.getElementById("searchIcon").addEventListener("click", function () {
-=======
- document.getElementById("searchIcon").addEventListener("click", function () {
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const dataFiltrada = datitos.infoFiltrada(dataImportada, searchUser);
@@ -103,27 +90,10 @@ document.getElementById("searchIcon").addEventListener("click", function () {
     resistenciaP.textContent = item.resistant;
     const debilidadP = document.getElementById("debilidad");
     debilidadP.textContent = item.weaknesses;
-<<<<<<< HEAD
-
-=======
-
-  })
-
-//DISPLAY PARA MODAL
-  const modalP = document.getElementById("modalPoke");
-  modalP.style.display = "block";
-  if (resultadoE == false) {
-    modalP.style.display = "none";
-  }
-  document.getElementById("closePoke").addEventListener("click", function () {
-    document.getElementById("modalPoke").style.display = "none";
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
-  });
 });
 
 //FILTRADO POR TIPO
 
-<<<<<<< HEAD
   //DISPLAY PARA MODAL
   const modalP = document.getElementById("modalPoke");
   modalP.style.display = "block";
@@ -137,14 +107,8 @@ document.getElementById("searchIcon").addEventListener("click", function () {
 
 //FILTRADO POR TIPO
 
-=======
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
 document.getElementById("menuDesplegable").addEventListener("change", function () {
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
   const pokePorTipo = datitos.filtradoPorTipo(dataImportada, elementoSeleccionado);
   templateCard(pokePorTipo);
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
