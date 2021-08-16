@@ -1,3 +1,4 @@
+
 const datitos = {
   //FUNCIONES PARA EL BUSCADOR
   infoFiltrada: function (dataImportada, searchUser) {
@@ -57,3 +58,4 @@ sortZa(dataImportada) {
 };
 
 export { datitos }
+

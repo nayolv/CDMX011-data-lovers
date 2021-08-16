@@ -112,3 +112,4 @@ document.getElementById("menuDesplegable").addEventListener("change", function (
   const pokePorTipo = datitos.filtradoPorTipo(dataImportada, elementoSeleccionado);
   templateCard(pokePorTipo);
 });
+
