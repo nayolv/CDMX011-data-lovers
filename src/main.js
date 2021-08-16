@@ -70,7 +70,7 @@ document.getElementById("za").addEventListener("click", function organizadorZa()
 
 
 //BUSCADOR POR NOMBRE
- document.getElementById("searchIcon").addEventListener("click", function () {
+document.getElementById("searchIcon").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const dataFiltrada = datitos.infoFiltrada(dataImportada, searchUser);
@@ -91,16 +91,16 @@ document.getElementById("za").addEventListener("click", function organizadorZa()
     const debilidadP = document.getElementById("debilidad");
     debilidadP.textContent = item.weaknesses;
 
-  })
+  });
 
-//DISPLAY PARA MODAL
+  //DISPLAY PARA MODAL
   const modalP = document.getElementById("modalPoke");
   modalP.style.display = "block";
   if (resultadoE == false) {
     modalP.style.display = "none";
   }
   document.getElementById("closePoke").addEventListener("click", function () {
-    document.getElementById("modalPoke").style.display = "none";
+  document.getElementById("modalPoke").style.display = "none";
   });
 });
 
