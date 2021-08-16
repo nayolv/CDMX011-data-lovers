@@ -62,8 +62,8 @@ body{
     background-color: rgb(252, 109, 109);
     border: 2px solid rgb(240, 41, 41);
     outline: none;
-    padding-left: 10 px;
     font-family: 'Khand', sans-serif;
+    padding-left: 10px;
 }
 #buscador:hover{
     background: rgb(230, 227, 109);
