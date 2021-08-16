@@ -1,290 +1,113 @@
-import datitos from './data.js';
+import { datitos } from './data.js';
 import data from './data/pokemon/pokemon.js';
-
 const dataImportada = data.pokemon;
 
+const contenedorInicio = document.getElementById("pokeInicio");
+let contenedorTarjetas = document.createElement("div");
 
+//CREA CONTENEDORES DE TARJETAS EN INICIO 
 const templateCard = (arrayData) => {
 
-  const contenedorInicio = document.getElementById("pokeInicio");
-  const contenedorTarjetas = document.createElement("div")
+  contenedorInicio.innerHTML = "";
 
   arrayData.forEach(item => {
+    const contenedorImgyNombre = document.createElement("div");
+    contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
+    contenedorImgyNombre.setAttribute("class", "claseTarjeta");
+    contenedorInicio.appendChild(contenedorImgyNombre);
 
-    //const contenedorImgyNombre = document.createElement("div");
-    contenedorTarjetas.setAttribute("id", "pokeTarjeta");
-    contenedorTarjetas.setAttribute("class", "claseTarjeta");
-    contenedorInicio.appendChild(contenedorTarjetas);
-
-    const numeros = item.num;
     const liNum = document.createElement("p");
-    console.log(liNum)
-    liNum.textContent = "N° " + numeros;
-    contenedorTarjetas.appendChild(liNum);
+    liNum.textContent = "N° " + item.num;
+    contenedorImgyNombre.appendChild(liNum);
 
     const elementoImg = document.createElement("img");
     elementoImg.src = item.img;
-    contenedorTarjetas.appendChild(elementoImg);
+    contenedorImgyNombre.appendChild(elementoImg);
 
-    //tipo pokemon
     const liNombre = document.createElement("p");
     liNombre.textContent = item.name;
-    contenedorTarjetas.appendChild(liNombre);
+    contenedorImgyNombre.appendChild(liNombre);
 
-  })
-  contenedorInicio.innerHTML = contenedorTarjetas
-}
+    //MODAL CARACTERISTICAS 
+    contenedorImgyNombre.addEventListener("click", function () {
 
-console.log
+      document.getElementById("modalPoke").style.display = "block";
+      const imagenP = document.getElementById("imgPoke");
+      const nombreP = document.getElementById("namePoke");
+      const tipoP = document.getElementById("tipo");
+      const resistenciaP = document.getElementById("resistencia");
+      const debilidadP = document.getElementById("debilidad");
 
-/*
-//ORDENADOS AZ
-document.getElementById("ordenAZ").addEventListener("click", function(){
-   
-  dataImportada.sort((a, b)=>{
-  if (a.name < b.name) {
-    return -1
-  }
-  if (a.name > b.name) {
-    return 1
-  }
-  return 0
- }); 
- document.getElementById("botonNuevaBusqueda").style.display = "none";
- document.getElementById("pokeInicio").style.display = "none";
- document.getElementById("ordenAZ").style.display = "none";
- document.getElementById("botonNuevaBusqueda").style.display = "block"
+      imagenP.src = item.img;
+      nombreP.textContent = "Name: " + item.name;
+      tipoP.textContent = item.type;
+      resistenciaP.textContent = item.resistant;
+      debilidadP.textContent = item.weaknesses;
 
- dataImportada.forEach(item => {
-  
-  //CREANDO div para las tarjetas
-  let contenedorInicio = document.getElementById("pokeInicio2");
-  const contenedorImgyNombre = document.createElement("div");
-  contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
-  contenedorImgyNombre.setAttribute("class", "claseTarjeta");
-  contenedorInicio.appendChild(contenedorImgyNombre);
-  
-  const numeros = item.num;
-  const liNum = document.createElement("p");
-  liNum.textContent = "N° " + numeros;
-  contenedorImgyNombre.appendChild(liNum);
-  
-  const elementoImg = document.createElement("img");
-  elementoImg.src = item.img;
-  contenedorImgyNombre.appendChild(elementoImg);
-  
-  //tipo pokemon
-  const liNombre = document.createElement("p"); 
-  liNombre.textContent = item.name;
-  contenedorImgyNombre.appendChild(liNombre);
-  
-  
-  //MODAL ABOUT 
-  contenedorImgyNombre.addEventListener("click", function () {
-  
-    document.getElementById("modalPoke").style.display = "block";
-    const imagenP = document.getElementById("imgPoke");
-    const nombreP = document.getElementById("namePoke");
-    const tipoP = document.getElementById("tipo");
-    const resistenciaP = document.getElementById("resistencia");
-    const debilidadP = document.getElementById("debilidad");
-  
-    imagenP.src = item.img;
-    nombreP.textContent = "Nombre: " + item.name;
-    tipoP.textContent = item.type;
-    resistenciaP.textContent = item.resistant;
-    debilidadP.textContent = item.weaknesses;
-    
+      document.getElementById("closePoke").addEventListener("click", function () {
+        document.getElementById("modalPoke").style.display = "none";
+      });
+    });
+
+
   });
-  
-  document.getElementById("closePoke").addEventListener("click", function () {
-    document.getElementById("modalPoke").style.display = "none";
-  });
- });
+
+};
+contenedorInicio.innerHTML = contenedorTarjetas;
+
+templateCard(dataImportada);
+
+//BOTON PARA ORDENAR A-Z
+document.getElementById("az").addEventListener("click", () => {
+  const ordenarAz = datitos.sortAz(dataImportada);
+  templateCard(ordenarAz);
+});
+//BOTON PARA ORDENAR Z-A
+document.getElementById("za").addEventListener("click", function organizadorZa() {
+  const ordenarZa = datitos.sortZa(dataImportada);
+  templateCard(ordenarZa);
 });
 
-//ORDENADOS ZA
-document.getElementById("ordenZA").addEventListener("click", function(){
-   
-  dataImportada.sort((a, b)=>{
-  if (a.name < b.name) {
-    return 1
-  }
-  if (a.name > b.name) {
-    return -1
-  }
-  return 0
- });
 
- document.getElementById("botonNuevaBusqueda").style.display = "none";
- document.getElementById("pokeInicio2").style.display = "none";
- document.getElementById("pokeInicio").style.display = "none";
- document.getElementById("ordenZA").style.display = "none";
- document.getElementById("botonNuevaBusqueda").style.display = "block"
-
-
- dataImportada.forEach(item => {
-  
-  //CREANDO div para las tarjetas
-  let contenedorInicio = document.getElementById("pokeInicio3");
-  const contenedorImgyNombre = document.createElement("div");
-  contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
-  contenedorImgyNombre.setAttribute("class", "claseTarjeta");
-  contenedorInicio.appendChild(contenedorImgyNombre);
-  
-  const numeros = item.num;
-  const liNum = document.createElement("p");
-  liNum.textContent = "N° " + numeros;
-  contenedorImgyNombre.appendChild(liNum);
-  
-  const elementoImg = document.createElement("img");
-  elementoImg.src = item.img;
-  contenedorImgyNombre.appendChild(elementoImg);
-  
-  //tipo pokemon
-  const liNombre = document.createElement("p"); 
-  liNombre.textContent = item.name;
-  contenedorImgyNombre.appendChild(liNombre);
-  
-  
-  //MODAL ABOUT 
-  contenedorImgyNombre.addEventListener("click", function () {
-  
-    document.getElementById("modalPoke").style.display = "block";
-    const imagenP = document.getElementById("imgPoke");
-    const nombreP = document.getElementById("namePoke");
-    const tipoP = document.getElementById("tipo");
-    const resistenciaP = document.getElementById("resistencia");
-    const debilidadP = document.getElementById("debilidad");
-  
-    imagenP.src = item.img;
-    nombreP.textContent = "Nombre: " + item.name;
-    tipoP.textContent = item.type;
-    resistenciaP.textContent = item.resistant;
-    debilidadP.textContent = item.weaknesses;
-    
-  });
-  
-  document.getElementById("closePoke").addEventListener("click", function () {
-    document.getElementById("modalPoke").style.display = "none";
-  });
- });
-});*/
-
-//Pokemon en pantalla inicial/*/*
-/*
-document.getElementById("ordenZA").addEventListener("click", function(){
-dataImportada.sort((a, b)=>{
-if (a.name < b.name) {
- return 1
-}
-if (a.name > b.name) {
- return -1
-}
-return 0
-});
-console.log(dataImportada)
-});
-
-document.getElementById("botonNuevaBusqueda").style.display = "none";
-
-dataImportada.forEach(item => {
- 
-//CREANDO div para las tarjetas
-let contenedorInicio = document.getElementById("pokeInicio");
-const contenedorImgyNombre = document.createElement("div");
-contenedorImgyNombre.setAttribute("id", "pokeTarjeta");
-contenedorImgyNombre.setAttribute("class", "claseTarjeta");
-contenedorInicio.appendChild(contenedorImgyNombre);
- 
-const numeros = item.num;
-const liNum = document.createElement("p");
-liNum.textContent = "N° " + numeros;
-contenedorImgyNombre.appendChild(liNum);
- 
-const elementoImg = document.createElement("img");
-elementoImg.src = item.img;
-contenedorImgyNombre.appendChild(elementoImg);
- 
-//tipo pokemon
-const liNombre = document.createElement("p"); 
-liNombre.textContent = item.name;
-contenedorImgyNombre.appendChild(liNombre);
- 
- 
-//MODAL ABOUT 
-contenedorImgyNombre.addEventListener("click", function () {
- 
-document.getElementById("modalPoke").style.display = "block";
-const imagenP = document.getElementById("imgPoke");
-const nombreP = document.getElementById("namePoke");
-const tipoP = document.getElementById("tipo");
-const resistenciaP = document.getElementById("resistencia");
-const debilidadP = document.getElementById("debilidad");
- 
-imagenP.src = item.img;
-nombreP.textContent = "Nombre: " + item.name;
-tipoP.textContent = item.type;
-resistenciaP.textContent = item.resistant;
-debilidadP.textContent = item.weaknesses;
- 
-});
- 
-document.getElementById("closePoke").addEventListener("click", function () {
-document.getElementById("modalPoke").style.display = "none";
-});
- 
-});*/
-
-document.getElementById("botonNuevaBusqueda").addEventListener("click", function () {
-  location.reload()
-});
-
-//BUSCADOR 
-const clickBuscar = document.getElementById("searchIcon");
-clickBuscar.addEventListener("click", function () {
+//BUSCADOR POR NOMBRE
+ document.getElementById("searchIcon").addEventListener("click", function () {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
-  const nombreP = document.getElementById("namePoke");
-  const imagenP = document.getElementById("imgPoke");
   const dataFiltrada = datitos.infoFiltrada(dataImportada, searchUser);
   const pokeData = datitos.mapeandoData(dataFiltrada);
   const resultadoE = datitos.pokeError(pokeData, searchUser);
-  if (resultadoE == false) {
-    alert("Ingresa un nombre válido")
-  }
-  const resultadoNomNum = datitos.pokeFiltroNameNum(dataFiltrada);
+  if (resultadoE == false) { alert("pokemon no encontrado") }
 
-  const resultadoImg = datitos.pokeFiltroImg(dataFiltrada);
-  const tipoP = document.getElementById("tipo");
-  const resultadoType = datitos.pokeFiltroType(dataFiltrada);
-  const resistenciaP = document.getElementById("resistencia");
-  const resultadoResist = datitos.pokeFiltroResist(dataFiltrada);
-  const debilidadP = document.getElementById("debilidad");
-  const resultadoDebil = datitos.pokeFiltroDebil(dataFiltrada);
+  dataFiltrada.forEach(item => {
 
-  imagenP.src = resultadoImg;
-  nombreP.textContent = resultadoNomNum;
-  tipoP.textContent = resultadoType;
-  resistenciaP.textContent = resultadoResist;
-  debilidadP.textContent = resultadoDebil;
+    const imagenP = document.getElementById("imgPoke");
+    imagenP.src = item.img;
+    const nombreP = document.getElementById("namePoke");
+    nombreP.textContent = "Name: " + item.name;
+    const tipoP = document.getElementById("tipo");
+    tipoP.textContent = item.type;
+    const resistenciaP = document.getElementById("resistencia");
+    resistenciaP.textContent = item.resistant;
+    const debilidadP = document.getElementById("debilidad");
+    debilidadP.textContent = item.weaknesses;
 
-  document.getElementById("caracateristicas").style.display = "block";
+  })
+
+//DISPLAY PARA MODAL
   const modalP = document.getElementById("modalPoke");
   modalP.style.display = "block";
-
   if (resultadoE == false) {
     modalP.style.display = "none";
   }
+  document.getElementById("closePoke").addEventListener("click", function () {
+    document.getElementById("modalPoke").style.display = "none";
+  });
 });
 
-
-
-//RESULTADO MENU DESPLEGABLE
+//FILTRADO POR TIPO
 
 document.getElementById("menuDesplegable").addEventListener("change", function () {
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
-  const pokePorTipo = datitos.recuperarSeleccionado(dataImportada, elementoSeleccionado);
-  templateCard(pokePorTipo)
-
+  const pokePorTipo = datitos.filtradoPorTipo(dataImportada, elementoSeleccionado);
+  templateCard(pokePorTipo);
 });

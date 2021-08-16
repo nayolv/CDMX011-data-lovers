@@ -1,10 +1,15 @@
 const datitos = {
-  infoFiltrada: function (dataImportada,searchUser){
-    return  dataImportada.filter(poke => poke.name == searchUser);
+  //FUNCIONES PARA EL BUSCADOR
+  infoFiltrada: function (dataImportada, searchUser) {
+    return dataImportada.filter(poke =>{
+      return poke.name.includes(searchUser)
+    });
   },
-   
-  mapeandoData: function(dataFiltrada){
-    return dataFiltrada.map(pokenombre => pokenombre.name);
+  
+  mapeandoData: function (dataFiltrada) {
+    return dataFiltrada.map(pokenombre => {
+      return pokenombre.name
+      });
   },
 
   pokeError(pokeData, searchUser) {
@@ -12,57 +17,43 @@ const datitos = {
       return false
     }
   },
+  //FILTRA POR TIPO DE POKEMON
+filtradoPorTipo(dataImportada, elementoSeleccionado) {
 
-  pokeFiltroNameNum: function (dataFiltrada) {
-    let resultadoNomNum = "";
+  return dataImportada.filter(poke =>{ 
+     return poke.type.includes(elementoSeleccionado)
+});
+},
+
+  //ORDENA ASCENDENTE
+sortAz(dataImportada) {
     
-    dataFiltrada.forEach(item => {
-      resultadoNomNum = "Nombre: " + item.name + " N°" + item.num;
-
-    });
-    return resultadoNomNum
-  },
-
-  pokeFiltroImg: function (dataFiltrada) {
-    let resultadoImg = "";
-    dataFiltrada.forEach(item => {
-      resultadoImg = item.img;
-    });
-    return resultadoImg
-  },
-
-  pokeFiltroType: function (dataFiltrada) {
-    let resultadoType = "";
-    dataFiltrada.forEach(item => {
-      resultadoType = item.type;
-    });
-    return resultadoType
-  },
-
-  pokeFiltroResist: function (dataFiltrada) {
-    let resultadoResist = "";
-    dataFiltrada.forEach(item => {
-      resultadoResist = item.resistant;
-    });
-    return resultadoResist
-  },
-
-  
-  pokeFiltroDebil: function (dataFiltrada) {
-    let resultadoDebil = "";
-    dataFiltrada.forEach(item => {
-      resultadoDebil = item.weaknesses;
-    });
-    return resultadoDebil
-  },
-//MENU DESPLEGABLE
-  recuperarSeleccionado: function(dataImportada, elementoSeleccionado) {
-  
-    return dataImportada.filter(poke => poke.type[0] == elementoSeleccionado||poke.type[1] == elementoSeleccionado);
-    
+  const az= dataImportada.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1
     }
+    if (a.name > b.name) {
+      return 1
+    }
+    return 0
+  });
+  return az;
+},
+
+//ORDENA DE DESCENDENTE
+sortZa(dataImportada) {
+
+  const za= dataImportada.sort((a, b) => {
+    if (a.name < b.name) {
+      return 1
+    }
+    if (a.name > b.name) {
+      return -1
+    }
+    return 0
+  });
+  return za;
+}
 };
-   
 
-
-export default datitos
+export { datitos }
