@@ -1,12 +1,15 @@
 const datitos = {
+  //FUNCIONES PARA EL BUSCADOR
   infoFiltrada: function (dataImportada, searchUser) {
-    const prueba1 = dataImportada.filter(poke => searchUser == poke.name);
-    return prueba1;
+    return dataImportada.filter(poke =>{
+      return poke.name.includes(searchUser)
+    });
   },
-
+  
   mapeandoData: function (dataFiltrada) {
-    const prueba = dataFiltrada.map(pokenombre => pokenombre.name);
-    return prueba;
+    return dataFiltrada.map(pokenombre => {
+      return pokenombre.name
+      });
   },
 
   pokeError(pokeData, searchUser) {
@@ -14,93 +17,43 @@ const datitos = {
       return false
     }
   },
-  pokeFiltroNameNum: function (dataFiltrada) {
-    let resultadoNomNum = "";
-    dataFiltrada.forEach(item => {
-      resultadoNomNum = "Nombre: " + item.name + " N°" + item.num;
+  //FILTRA POR TIPO DE POKEMON
+filtradoPorTipo(dataImportada, elementoSeleccionado) {
 
-    });
-    return resultadoNomNum
-  },
+  return dataImportada.filter(poke =>{ 
+     return poke.type.includes(elementoSeleccionado)
+});
+},
 
-  pokeFiltroImg: function (dataFiltrada) {
-    let resultadoImg = "";
-    dataFiltrada.forEach(item => {
-      resultadoImg = item.img;
-    });
-    return resultadoImg
-  },
-
-  pokeFiltroType: function (dataFiltrada) {
-    let resultadoType = "";
-    dataFiltrada.forEach(item => {
-      resultadoType = item.type;
-    });
-    return resultadoType
-  },
-
-  pokeFiltroResist: function (dataFiltrada) {
-    let resultadoResist = "";
-    dataFiltrada.forEach(item => {
-      resultadoResist = item.resistant;
-    });
-    return resultadoResist
-  },
-
-
-  pokeFiltroDebil: function (dataFiltrada) {
-    let resultadoDebil = "";
-    dataFiltrada.forEach(item => {
-      resultadoDebil = item.weaknesses;
-    });
-    return resultadoDebil
-  },
-
-  recuperarSeleccionado: function (dataImportada, elementoSeleccionado) {
-
-    return dataImportada.filter(poke => elementoSeleccionado == poke.type[0] || elementoSeleccionado == poke.type[1]);
-
-
-  },
-
-  
-  //Organiza de la a a la z
-  az: function (dataImportada) {
+  //ORDENA ASCENDENTE
+sortAz(dataImportada) {
     
-    const az= dataImportada.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1
-      }
-      if (a > b) {
-        return 1
-      }
-      return 0
-    });
-    return az;
-  },
-  //Organiza de la z a la a
+  const az= dataImportada.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1
+    }
+    if (a.name > b.name) {
+      return 1
+    }
+    return 0
+  });
+  return az;
+},
 
-  za: function (dataImportada) {
-  
-    const za= dataImportada.sort((a, b) => {
-      if (a.name < b.name) {
-        return 1
-      }
-      if (a.name > b.name) {
-        return -1
-      }
-      return 0
-    });
-    return za;
-  }
+//ORDENA DE DESCENDENTE
+sortZa(dataImportada) {
+
+  const za= dataImportada.sort((a, b) => {
+    if (a.name < b.name) {
+      return 1
+    }
+    if (a.name > b.name) {
+      return -1
+    }
+    return 0
+  });
+  return za;
+}
 };
-
-//Botones de organizacion de AZ y ZA
-
-
-
-//recupera imagen y nombre del objeto
-
-
 
 export { datitos }
