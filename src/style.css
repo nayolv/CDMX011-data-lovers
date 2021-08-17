@@ -63,10 +63,7 @@ body{
     border: 2px solid rgb(240, 41, 41);
     outline: none;
     font-family: 'Khand', sans-serif;
-<<<<<<< HEAD
     font-weight: bold;
-=======
->>>>>>> 84917717163df18f238d3c20ad044d537b6dd3ba
     padding-left: 10px;
 }
 #buscador:hover{

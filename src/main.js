@@ -29,7 +29,7 @@ const templateCard = (arrayData) => {
     contenedorImgyNombre.appendChild(liNombre);
 
     //MODAL CARACTERISTICAS 
-    contenedorImgyNombre.addEventListener("click", function () {
+    contenedorImgyNombre.addEventListener("click", () => {
 
       document.getElementById("modalPoke").style.display = "block";
       const imagenP = document.getElementById("imgPoke");
@@ -44,7 +44,7 @@ const templateCard = (arrayData) => {
       resistenciaP.textContent = item.resistant;
       debilidadP.textContent = item.weaknesses;
 
-      document.getElementById("closePoke").addEventListener("click", function () {
+      document.getElementById("closePoke").addEventListener("click", () => {
         document.getElementById("modalPoke").style.display = "none";
       });
     });
@@ -56,21 +56,32 @@ const templateCard = (arrayData) => {
 contenedorInicio.innerHTML = contenedorTarjetas;
 
 templateCard(dataImportada);
-
+/*
 //BOTON PARA ORDENAR A-Z
 document.getElementById("az").addEventListener("click", () => {
   const ordenarAz = datitos.sortAz(dataImportada);
   templateCard(ordenarAz);
 });
 //BOTON PARA ORDENAR Z-A
-document.getElementById("za").addEventListener("click", function organizadorZa() {
+document.getElementById("za").addEventListener("click", () => {
   const ordenarZa = datitos.sortZa(dataImportada);
   templateCard(ordenarZa);
+});*/
+const container = document.querySelector(".container");
+container.addEventListener("click", (e) =>{
+if(e.target.classList.contains("btnAZ")){
+  const ordenarAz = datitos.sortAz(dataImportada);
+  templateCard(ordenarAz);
+}
+else if (e.target.classList.contains("btnZA")) {
+  const ordenarZa = datitos.sortZa(dataImportada);
+  templateCard(ordenarZa);
+}
 });
 
 
 //BUSCADOR POR NOMBRE
-document.getElementById("searchIcon").addEventListener("click", function () {
+document.getElementById("searchIcon").addEventListener("click", () => {
 
   const searchUser = document.getElementById("buscador").value.toLowerCase();
   const dataFiltrada = datitos.infoFiltrada(dataImportada, searchUser);
@@ -100,14 +111,14 @@ document.getElementById("searchIcon").addEventListener("click", function () {
   if (resultadoE == false) {
     modalP.style.display = "none";
   }
-  document.getElementById("closePoke").addEventListener("click", function () {
+  document.getElementById("closePoke").addEventListener("click", () => {
   document.getElementById("modalPoke").style.display = "none";
   });
 });
 
 //FILTRADO POR TIPO
 
-document.getElementById("menuDesplegable").addEventListener("change", function () {
+document.getElementById("menuDesplegable").addEventListener("change", () => {
   const elementoSeleccionado = document.getElementById("menuDesplegable").value;
   const pokePorTipo = datitos.filtradoPorTipo(dataImportada, elementoSeleccionado);
   templateCard(pokePorTipo);
