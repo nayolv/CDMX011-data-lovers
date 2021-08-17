@@ -54,19 +54,9 @@ const templateCard = (arrayData) => {
 
 };
 contenedorInicio.innerHTML = contenedorTarjetas;
-
 templateCard(dataImportada);
-/*
+
 //BOTON PARA ORDENAR A-Z
-document.getElementById("az").addEventListener("click", () => {
-  const ordenarAz = datitos.sortAz(dataImportada);
-  templateCard(ordenarAz);
-});
-//BOTON PARA ORDENAR Z-A
-document.getElementById("za").addEventListener("click", () => {
-  const ordenarZa = datitos.sortZa(dataImportada);
-  templateCard(ordenarZa);
-});*/
 const container = document.querySelector(".container");
 container.addEventListener("click", (e) =>{
 if(e.target.classList.contains("btnAZ")){
@@ -102,8 +92,6 @@ document.getElementById("searchIcon").addEventListener("click", () => {
     const debilidadP = document.getElementById("debilidad");
     debilidadP.textContent = item.weaknesses;
 });
-
-//FILTRADO POR TIPO
 
   //DISPLAY PARA MODAL
   const modalP = document.getElementById("modalPoke");

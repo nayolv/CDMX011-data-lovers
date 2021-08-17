@@ -91,7 +91,7 @@ body{
     background: rgb(230, 227, 109);
     transform: scale(1.1);
 }
-.colorBotones{
+#menuDesplegable{
     text-align-last: center;
     margin-right: 17px;
     margin: 6px;
@@ -108,9 +108,37 @@ body{
 #menuDesplegable:hover{
     background: rgb(230, 227, 109);
 }
+#az{
+    text-align-last: center;
+    margin-right: 17px;
+    margin: 6px;
+    height: 50px;
+    width: 250px;
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
+    border-radius: 15px;
+    outline: none;
+    font-family: 'Khand', sans-serif;    
+    font-size: 17px;
+    font-weight: bold;  
+}
 #az:hover{
     background: rgb(230, 227, 109);
     transform: scale(1.1); 
+}
+#za{
+    text-align-last: center;
+    margin-right: 17px;
+    margin: 6px;
+    height: 50px;
+    width: 250px;
+    background-color: rgb(252, 109, 109);
+    border: 2px solid rgb(240, 41, 41);
+    border-radius: 15px;
+    outline: none;
+    font-family: 'Khand', sans-serif;    
+    font-size: 17px;
+    font-weight: bold;  
 }
 #za:hover{
     background: rgb(230, 227, 109);

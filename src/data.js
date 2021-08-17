@@ -17,6 +17,7 @@ const datitos = {
       return false
     }
   },
+
   //FILTRA POR TIPO DE POKEMON
 filtradoPorTipo(dataImportada, elementoSeleccionado) {
 
@@ -57,3 +58,4 @@ sortZa(dataImportada) {
 };
 
 export { datitos }
+
